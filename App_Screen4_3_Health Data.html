@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HealthSYNC - Add Health Data</title>
+<style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f9fb;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .back-button {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .save-header-button {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+
+        .save-header-button:hover {
+            opacity: 0.9;
+        }
+
+        /* Form Container */
+        .form-container {
+            padding: 1.5rem;
+            padding-bottom: 120px;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Data Type Selector */
+        .data-type-selector {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .data-type {
+            padding: 1rem;
+            border: 2px solid #e0e0e0; /* Default border color */
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: 100px; /* Fixed height for consistency */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black; /* Ensure text color is black */
+            background: white; /* Default background is white */
+        }
+
+        .data-type.active {
+            border-color: #2A9D8F;
+            background: #e9f7f5;
+        }
+
+        .data-type.custom {
+            background: #f0f0f0;
+            color: #2A9D8F;
+            font-weight: bold;
+            height: auto; /* Allow custom item to have a different height */
+            padding: 1.5rem; /* Larger padding for emphasis */
+        }
+
+        /* Custom Styles for Symptom and Medical */
+        .data-type[data-type="symptom"] {
+            border-color: #2A9D8F; /* Green border for Symptom */
+            background: #e9f7f5; /* Light green background for Symptom */
+        }
+
+        .data-type[data-type="medical"],
+        .data-type[data-type="diet"] {
+            border-color: #e0e0e0; /* Gray border for Medical and Diet */
+            background: white; /* White background for Medical and Diet */
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #264653;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2A9D8F;
+        }
+
+        /* Voice-to-text Button */
+        .voice-to-text {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .voice-to-text:hover {
+            opacity: 0.9;
+        }
+
+        /* Save Data Button */
+        .save-data-button {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .save-data-button:hover {
+            opacity: 0.9;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item.active {
+            color: #2A9D8F;
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+    
+            /* 数据类型选择器的响应式布局 */
+            .data-type-selector {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+                padding: 1rem;
+                width: 100%;
+            }
+
+            .data-type {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 1rem;
+                min-height: 60px;
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+
+            @media (max-width: 768px) {
+                .data-type-selector {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .data-type {
+                    font-size: 0.9em;
+                    padding: 0.8rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .data-type-selector {
+                    grid-template-columns: 1fr;
+                    gap: 0.8rem;
+                }
+                
+                .data-type {
+                    width: 100%;
+                    min-height: 50px;
+                }
+            }
+            </style>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+<div class="header-controls">
+<div class="back-button" onclick="window.location.href='App_Screen4_1_Health Data.html'">←</div>
+<h2>Log Health Data</h2>
+</div>
+<button class="save-header-button" onclick="saveData()">Save</button>
+</header>
+<!-- Main Content -->
+<main class="form-container">
+<div class="form-card">
+<!-- Data Type Selector -->
+<div class="data-type-selector">
+<!-- First Row -->
+<div class="data-type" data-type="medical" onclick="window.location.href='App_Screen4_2_Health Data.html'">
+                    🏥 Medical
+                </div>
+<div class="data-type active" data-type="symptom" onclick="window.location.href='App_Screen4_3_Health Data.html'">
+                    🤒 Symptom
+                </div>
+<div class="data-type" data-type="diet" onclick="window.location.href='App_Screen4_4_Health Data.html'">
+                    🥗 Diet
+                </div>
+<div class="data-type" data-type="exercise" onclick="window.location.href='App_Screen4_5_Health Data.html'">
+                    🏃 Exercise
+                </div>
+</div>
+<div class="data-type-selector">
+<!-- Second Row -->
+<div class="data-type" data-type="medication" onclick="window.location.href='App_Screen4_6_Health Data.html'">
+                    💊 Medication
+                </div>
+<div class="data-type" data-type="bgm" onclick="window.location.href='App_Screen4_7_Health Data.html'">
+                    🩺 BGM
+                </div>
+<div class="data-type" data-type="weight">
+                    ⚖️ Weight
+                </div>
+<div class="data-type custom" onclick="addCustomItem()">
+                    ➕ Custom Item
+                </div>
+</div>
+<!-- Dynamic Forms -->
+<div class="form-section active" id="medical-form">
+<div class="form-group">
+<label>Symptom Name</label> <!-- Changed from Condition Name to Symptom Name -->
+<div style="display: flex; gap: 1rem;">
+<input placeholder="e.g., Headache" type="text"/>
+<button class="voice-to-text" onclick="startVoiceToText()">
+                            🎤 Voice-to-text
+                        </button>
+</div>
+</div>
+<div class="form-group">
+<label>Diagnosis Date</label>
+<input id="diagnosis-date" onfocus="(this.type='date')" placeholder="dd/mm/yyyy" required="" type="text"/>
+</div>
+<div class="form-group">
+<label>Severity Level</label> <!-- Replaced Related Documents with Severity Level -->
+<select>
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+</select>
+</div>
+</div>
+<!-- AI Suggestions -->
+<div class="form-group">
+<label>
+<input id="ai-advice" type="checkbox"/> Get AI Recommendations
+                </label>
+</div>
+<!-- Save Data Button -->
+<button class="save-data-button" onclick="saveData()">Save Data</button>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+<div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+<div class="nav-item" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+<div class="nav-item active" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+<div class="health-data-icon"></div>
+</div>
+<div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+<div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+</nav>
+<script>
+        // Data Type Selection
+        function selectDataType(element, type) {
+            document.querySelectorAll('.data-type, .form-section').forEach(el => {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+            document.getElementById(`${type}-form`).classList.add('active');
+        }
+
+        // Voice-to-text Functionality
+        function startVoiceToText() {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert('Your browser does not support voice-to-text. Please use Chrome or Edge.');
+                return;
+            }
+
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.start();
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                const conditionNameInput = document.querySelector('#medical-form input[type="text"]');
+                conditionNameInput.value = transcript;
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Voice recognition error:', event.error);
+                alert('Error occurred in voice recognition. Please try again.');
+            };
+        }
+
+        // Add Custom Item
+        function addCustomItem() {
+            const customItem = prompt('Enter the name of your custom item:');
+            if (customItem) {
+                alert(`Custom item "${customItem}" added!`);
+                // Here you can add logic to handle the custom item
+            }
+        }
+
+        // Save Data
+        function saveData() {
+            const formData = {
+                dataType: document.querySelector('.data-type.active').dataset.type,
+                aiAdvice: document.getElementById('ai-advice').checked,
+                // Add other form data collection logic
+            };
+            console.log('Saving:', formData);
+            alert('Data saved successfully!');
+            window.history.back();
+        }
+
+        // Navigation Handling
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+
+        // Date Format Handling
+        const diagnosisDateInput = document.getElementById('diagnosis-date');
+        diagnosisDateInput.addEventListener('change', function() {
+            const date = new Date(this.value);
+            const day = String(date.getDate()).padStart(2, '0');
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const year = date.getFullYear();
+            this.value = `${day}/${month}/${year}`;
+        });
+    </script>
+</body>
+</html>

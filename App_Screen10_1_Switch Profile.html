@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Client Profile Management</title>
+<style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 80px; /* Add space for bottom navigation */
+        }
+
+        /* Profile Switching */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .back-arrow {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .switch-profile-btn {
+            background-color: #10b981; /* Green color */
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .switch-profile-btn:hover {
+            background-color: #0d9f6e; /* Darker green on hover */
+        }
+
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .client-card {
+            padding: 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .client-card.active {
+            border-color: #10b981; /* Green border */
+            background: #f0fdf4; /* Light green background */
+        }
+
+        /* Data Dashboard */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .ai-insight {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Plan Adjustment */
+        .plan-form {
+            display: grid;
+            gap: 1.5rem;
+            border-top: 2px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+
+        .update-button {
+            background-color: #10b981; /* Green color */
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .update-button:hover {
+            background-color: #0d9f6e; /* Darker green on hover */
+        }
+
+        .status-message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .nav-item.active {
+            color: #3b82f6;
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<!-- Profile Switching -->
+<div class="profile-header">
+<div class="back-arrow" onclick="window.location.href='App_Screen6_My Profiles.html'">←</div>
+<h1>Switch Profile</h1>
+</div>
+<!-- Other Profiles Section -->
+<div class="section-header">
+<h2>Other Profiles</h2>
+<button class="switch-profile-btn" onclick="window.location.href='App_Screen6_My Profiles.html'">Switch Profile</button>
+</div>
+<div class="client-grid">
+<div class="client-card active" data-client="client1">
+<h3>John Doe</h3>
+<p>Last active: 2h ago</p>
+</div>
+<div class="client-card" data-client="client2">
+<h3>Sarah Smith</h3>
+<p>Last active: 1d ago</p>
+</div>
+</div>
+<!-- Client Data -->
+<div class="metrics-grid">
+<div class="metric-card">
+<h4>Workouts (7d)</h4>
+<p class="metric-value">5 sessions</p>
+</div>
+<div class="metric-card">
+<h4>Calories Burned</h4>
+<p class="metric-value">3,200 kcal</p>
+</div>
+<div class="metric-card">
+<h4>Avg Heart Rate</h4>
+<p class="metric-value">142 bpm</p>
+</div>
+<div class="metric-card">
+<h4>Recovery Score</h4>
+<p class="metric-value">68/100</p>
+</div>
+</div>
+<!-- AI Insights -->
+<div class="ai-insight">
+<h3>AI Analysis</h3>
+<p>Client shows 15% improved endurance but 20% slower recovery compared to last month.</p>
+<div class="recommendation">
+<strong>Recommendation:</strong> Consider reducing high-intensity sessions by 30% 
+                and adding 2 active recovery days per week.
+            </div>
+</div>
+<!-- Plan Adjustment -->
+<form class="plan-form">
+<button class="update-button" onclick="window.location.href='App_Screen4_5_Health Data.html'" style="cursor: pointer;" type="submit">Update Exercise Plan</button>
+<div class="status-message success">
+                Plan updated and client notified successfully!
+            </div>
+</form>
+</div>
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+<div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+<div class="nav-item" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+<div class="nav-item" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+<div class="health-data-icon"></div>
+</div>
+<div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+<div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+</nav>
+<script>
+        // Client Profile Selection
+        document.querySelectorAll('.client-card').forEach(card => {
+            card.addEventListener('click', () => {
+                document.querySelectorAll('.client-card').forEach(c => 
+                    c.classList.remove('active'));
+                card.classList.add('active');
+                loadClientData(card.dataset.client);
+            });
+        });
+
+        // Simulated Data Loading
+        function loadClientData(clientId) {
+            console.log(`Loading data for ${clientId}...`);
+            // Add actual data loading logic here
+        }
+
+        // Form Submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            const status = document.querySelector('.status-message');
+            status.style.display = 'block';
+            setTimeout(() => status.style.display = 'none', 3000);
+        });
+
+        // Navigation Interaction
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

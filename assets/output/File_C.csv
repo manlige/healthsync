@@ -1,0 +1,335 @@
+Enrolled Year,Graduation Year,Student ID,Student Full Name,Country,Date of Birth,Enrollment Status,Gender,NFQ Level,College,Field of Study,Level of Study,Duration of Study,Study Type,Nace Rev 2 Activity,Grade Level,Employment Status
+2023,2024.0,12000000389,Zachary Higgins,International,2000-03-08,graduated,Male,NFQ Level 9,COMH,Nursing (Oncology Nursing),MSc,1 Year,FT,Forestry,H21,FT
+2023,2024.0,12000000390,Peter Brown,Ireland,1999-04-18,graduated,Female,NFQ Level 9,COMH,Nursing (Specialist Mental Health Nursing Practice),MSc,1 Year,FT,Fishing,H22,FT
+2023,2024.0,12000000393,Lindsay Stewart,International,1998-06-08,graduated,Male,NFQ Level 9,COMH,Physiotherapy,MSc,1 Year,FT,Fishing,H22,FT
+2023,2024.0,12000000394,Samantha Guerra,Ireland,1995-08-04,graduated,Female,NFQ Level 9,COMH,Radiation Therapy,MSc,1 Year,FT,Forestry,H1,PT
+2023,2024.0,12000000399,Mathew Mccullough,International,1996-04-24,graduated,Male,NFQ Level 9,COMH,Sports and Exercise Medicine,MMedSc,1 Year,FT,Forestry,H21,FT
+2023,2024.0,12000000426,Scott Holmes,International,1994-11-21,graduated,Male,NFQ Level 9,COMH,Audiology,MSc,1 Year,FT,Agriculture,H22,FT
+2023,2024.0,12000000439,Melissa Castro,Ireland,1999-04-28,graduated,Male,NFQ Level 9,COMH,Diagnostic Radiography,MSc,1 Year,FT,Technology,H3,FT
+2023,2024.0,12000000445,Jamie Mueller,Ireland,2001-12-30,graduated,Male,NFQ Level 9,COMH,Education,Med,1 Year,FT,Fishing,H3,FT
+2023,2024.0,12000000505,Ethan King,Ireland,1998-05-02,graduated,Male,NFQ Level 9,COMH,Nursing (Gerontological Nursing),MSc,1 Year,FT,Health,H21,FT
+2023,2024.0,12000000510,Dr. Holly Owens DDS,International,2000-07-09,graduated,Male,NFQ Level 9,COMH,Nursing (Intensive Care Nursing),MSc,1 Year,FT,Technology,H3,FT
+2023,2024.0,12000000511,Laura Gomez,Ireland,1996-05-26,graduated,Male,NFQ Level 9,COMH,Nursing (Oncology Nursing),MSc,1 Year,FT,Fishing,H22,FT
+2023,2024.0,12000000512,Jessica Daugherty,Ireland,2000-06-03,graduated,Male,NFQ Level 9,COMH,Nursing (Specialist Mental Health Nursing Practice),MSc,1 Year,FT,Forestry,H21,FT
+2023,2024.0,12000000516,Sarah Klein,Ireland,2000-08-31,graduated,Female,NFQ Level 9,COMH,Physiotherapy,MSc,1 Year,FT,Fishing,H21,PT
+2023,2024.0,12000000517,William Wilson,Ireland,1995-03-14,graduated,Female,NFQ Level 9,COMH,Radiation Therapy,MSc,1 Year,FT,Education,H21,FT
+2023,2024.0,12000000523,Terry Parker,Ireland,1994-12-16,graduated,Male,NFQ Level 9,COMH,Sports and Exercise Medicine,MMedSc,1 Year,FT,Health,H21,FT
+2023,2024.0,12000000552,Richard Hurst,Ireland,2000-07-02,graduated,Male,NFQ Level 9,COMH,Audiology,MSc,1 Year,FT,Technology,H21,FT
+2023,2024.0,12000000565,Angela Miller,International,2000-08-16,graduated,Male,NFQ Level 9,COMH,Diagnostic Radiography,MSc,1 Year,FT,Agriculture,H21,FT
+2023,2024.0,12000000568,Thomas King,Ireland,1999-03-10,graduated,Male,NFQ Level 9,COMH,Education,Med,1 Year,FT,Fishing,H21,FT
+2023,2024.0,12000000638,Cody Mccann,International,2001-09-10,graduated,Female,NFQ Level 9,COMH,Nursing (Gerontological Nursing),MSc,1 Year,FT,Technology,H21,PT
+2023,2024.0,12000000641,Marc Wilson,Ireland,1999-09-06,graduated,Female,NFQ Level 9,COMH,Nursing (Intensive Care Nursing),MSc,1 Year,FT,Agriculture,H22,FT
+2023,2024.0,12000000643,Christine Rodriguez,Ireland,1996-08-05,graduated,Male,NFQ Level 9,COMH,Nursing (Oncology Nursing),MSc,1 Year,FT,Education,H22,FT
+2023,2024.0,12000000645,Jade Durham,International,2000-06-29,graduated,Male,NFQ Level 9,COMH,Nursing (Specialist Mental Health Nursing Practice),MSc,1 Year,FT,Finance,H21,PT
+2023,,12000000652,Cindy Price,Ireland,1998-08-29,dropped out,Male,NFQ Level 9,COMH,Physiotherapy,MSc,1 Year,FT,Health,H3,FT
+2023,2024.0,12000000653,Traci Morris,Ireland,2002-06-15,graduated,Female,NFQ Level 9,COMH,Radiation Therapy,MSc,1 Year,FT,Forestry,H21,FT
+2023,,12000000656,Shari Moon,Ireland,1998-01-10,dropped out,Male,NFQ Level 9,COMH,Sports and Exercise Medicine,MMedSc,1 Year,FT,Health,H21,FT
+2023,2024.0,12000000683,Oscar Hoover,Ireland,2001-08-17,graduated,Female,NFQ Level 9,COMH,Audiology,MSc,1 Year,FT,Finance,H3,FT
+2023,2024.0,12000000697,Karina Silva,Ireland,2002-02-26,graduated,Female,NFQ Level 9,COMH,Diagnostic Radiography,MSc,1 Year,FT,Technology,H22,FT
+2023,2024.0,12000000700,Eric Gonzalez,Ireland,2001-11-02,graduated,Male,NFQ Level 9,COMH,Education,Med,1 Year,FT,Education,H1,FT
+2023,2024.0,12000000772,Lee Garcia,International,2001-11-18,graduated,Female,NFQ Level 9,COMH,Nursing (Gerontological Nursing),MSc,1 Year,FT,Education,H1,FT
+2023,2024.0,12000000774,Alan Brown,International,2001-03-17,graduated,Female,NFQ Level 9,COMH,Nursing (Intensive Care Nursing),MSc,1 Year,FT,Agriculture,H22,PT
+2023,,12000000775,Jeremy Robertson,International,1994-07-11,dropped out,Female,NFQ Level 9,COMH,Nursing (Oncology Nursing),MSc,1 Year,FT,Forestry,H22,PT
+2023,2024.0,12000000777,William Evans,International,1997-11-24,graduated,Male,NFQ Level 9,COMH,Nursing (Specialist Mental Health Nursing Practice),MSc,1 Year,FT,Fishing,H22,FT
+2023,2024.0,12000000784,Chelsea Pena,Ireland,2003-01-10,graduated,Male,NFQ Level 9,COMH,Physiotherapy,MSc,1 Year,FT,Forestry,H22,FT
+2023,2024.0,12000000785,Jennifer Watkins,International,1998-04-15,graduated,Female,NFQ Level 9,COMH,Radiation Therapy,MSc,1 Year,FT,Technology,H3,FT
+2023,2024.0,12000000789,Christopher Walker,International,1994-12-30,graduated,Male,NFQ Level 9,COMH,Sports and Exercise Medicine,MMedSc,1 Year,FT,Health,H22,FT
+2023,2024.0,12000000833,John Powell,Ireland,1995-12-19,graduated,Male,NFQ Level 9,COMH,Audiology,MSc,1 Year,FT,Technology,H1,FT
+2023,2024.0,12000000846,Kelly Conway,Ireland,1998-06-27,graduated,Male,NFQ Level 9,COMH,Diagnostic Radiography,MSc,1 Year,FT,Health,H3,FT
+2023,2024.0,12000000848,Melinda Hood,Ireland,2002-09-12,graduated,Male,NFQ Level 9,COMH,Education,Med,1 Year,FT,Agriculture,H21,PT
+2023,2024.0,12000000915,Christopher Clark,Ireland,2001-05-09,graduated,Female,NFQ Level 9,COMH,Nursing (Gerontological Nursing),MSc,1 Year,FT,Fishing,H21,FT
+2023,2024.0,12000000916,Mason Harrison,International,1995-10-19,graduated,Female,NFQ Level 9,COMH,Nursing (Intensive Care Nursing),MSc,1 Year,FT,Finance,H21,PT
+2023,2024.0,12000000917,Lisa Werner,International,1997-09-15,graduated,Male,NFQ Level 9,COMH,Nursing (Oncology Nursing),MSc,1 Year,FT,Agriculture,H3,PT
+2023,2024.0,12000000918,Timothy Compton,International,1996-01-12,graduated,Female,NFQ Level 9,COMH,Nursing (Specialist Mental Health Nursing Practice),MSc,1 Year,FT,Education,H21,PT
+2023,2024.0,12000000922,Melissa Miller,International,1997-08-27,graduated,Female,NFQ Level 9,COMH,Physiotherapy,MSc,1 Year,FT,Forestry,H21,FT
+2023,2024.0,12000000923,Raven Flowers,International,1994-12-17,graduated,Male,NFQ Level 9,COMH,Radiation Therapy,MSc,1 Year,FT,Finance,H1,PT
+2023,2024.0,12000000930,Patrick Anderson,International,1997-06-03,graduated,Male,NFQ Level 9,COMH,Sports and Exercise Medicine,MMedSc,1 Year,FT,Finance,H22,PT
+2023,2024.0,12000000969,Jasmine Osborne,Ireland,1996-05-17,graduated,Female,NFQ Level 9,COMH,Audiology,MSc,1 Year,FT,Education,H3,FT
+2023,2024.0,12000000982,Jason Davis,International,2001-08-12,graduated,Male,NFQ Level 9,COMH,Diagnostic Radiography,MSc,1 Year,FT,Forestry,H3,FT
+2023,2024.0,12000000987,Matthew Baker,International,2001-09-06,graduated,Male,NFQ Level 9,COMH,Education,Med,1 Year,FT,Forestry,H3,FT
+2023,2025.0,12000000056,Amber Adams,International,1994-09-13,graduated,Male,NFQ Level 9,COMH,Nursing (Gerontological Nursing),MSc,1 Year,FT,Education,H21,FT
+2023,2025.0,12000000057,Julie Forbes,Ireland,1999-12-05,graduated,Female,NFQ Level 9,COMH,Nursing (Intensive Care Nursing),MSc,1 Year,FT,Education,H22,FT
+2023,2025.0,12000000061,Angel Kane,International,1999-07-02,graduated,Female,NFQ Level 9,COMH,Nursing (Oncology Nursing),MSc,1 Year,FT,Health,H3,FT
+2023,2025.0,12000000063,James Gonzalez,Ireland,1999-04-18,graduated,Male,NFQ Level 9,COMH,Nursing (Specialist Mental Health Nursing Practice),MSc,1 Year,FT,Fishing,H22,FT
+2023,2025.0,12000000067,Corey Booker,International,1995-03-25,graduated,Male,NFQ Level 9,COMH,Physiotherapy,MSc,1 Year,FT,Education,H21,FT
+2023,2025.0,12000000068,Christine Trujillo,Ireland,1998-09-25,graduated,Male,NFQ Level 9,COMH,Radiation Therapy,MSc,1 Year,FT,Education,H1,FT
+2023,2025.0,12000000077,Miguel Johnson,International,1999-09-10,graduated,Male,NFQ Level 9,COMH,Sports and Exercise Medicine,MMedSc,1 Year,FT,Health,H21,FT
+2023,2025.0,12000000106,William Hamilton,Ireland,2002-09-05,graduated,Female,NFQ Level 9,COMH,Audiology,MSc,1 Year,FT,Forestry,H1,FT
+2023,2025.0,12000000119,Hannah Hernandez,International,2002-11-14,graduated,Male,NFQ Level 9,COMH,Diagnostic Radiography,MSc,1 Year,FT,Health,H3,PT
+2023,2025.0,12000000129,Gary Williams,Ireland,1998-12-21,graduated,Female,NFQ Level 9,COMH,Education,Med,1 Year,FT,Technology,H21,FT
+2023,2025.0,12000000197,Stephanie Hunt,Ireland,1995-07-26,graduated,Male,NFQ Level 9,COMH,Nursing (Gerontological Nursing),MSc,1 Year,FT,Education,H22,FT
+2023,2025.0,12000000198,Joel Peters,Ireland,1997-05-27,graduated,Male,NFQ Level 9,COMH,Nursing (Intensive Care Nursing),MSc,1 Year,FT,Education,H21,FT
+2023,2025.0,12000000201,Connie Sullivan,Ireland,2000-03-21,graduated,Female,NFQ Level 9,COMH,Nursing (Oncology Nursing),MSc,1 Year,FT,Fishing,H21,FT
+2023,2025.0,12000000203,Elizabeth Anderson,Ireland,1997-06-17,graduated,Male,NFQ Level 9,COMH,Nursing (Specialist Mental Health Nursing Practice),MSc,1 Year,FT,Forestry,H1,PT
+2023,2025.0,12000000207,Eric Hernandez,International,1996-03-28,graduated,Male,NFQ Level 9,COMH,Physiotherapy,MSc,1 Year,FT,Technology,H21,FT
+2023,2025.0,12000000208,Dr. Daniel Martinez,International,1997-02-10,graduated,Male,NFQ Level 9,COMH,Radiation Therapy,MSc,1 Year,FT,Forestry,H3,FT
+2023,2025.0,12000000214,Scott Harris,International,2001-02-09,graduated,Female,NFQ Level 9,COMH,Sports and Exercise Medicine,MMedSc,1 Year,FT,Forestry,H22,PT
+2023,2025.0,12000000253,Jody Davis,International,1999-08-24,graduated,Male,NFQ Level 9,COMH,Audiology,MSc,1 Year,FT,Forestry,H21,FT
+2023,,12000000268,Christopher Reyes,International,2001-08-19,dropped out,Female,NFQ Level 9,COMH,Diagnostic Radiography,MSc,1 Year,FT,Fishing,H1,PT
+2023,2025.0,12000000271,Evan Walton,International,2002-11-07,graduated,Female,NFQ Level 9,COMH,Education,Med,1 Year,FT,Technology,H21,FT
+2023,2025.0,12000000335,Amy Bryan,International,1996-03-04,graduated,Female,NFQ Level 9,COMH,Nursing (Gerontological Nursing),MSc,1 Year,FT,Finance,H22,FT
+2023,2025.0,12000000338,Nathan Sampson,Ireland,1994-05-05,graduated,Male,NFQ Level 9,COMH,Nursing (Intensive Care Nursing),MSc,1 Year,FT,Forestry,H3,FT
+2023,2025.0,12000000339,Ronald Holmes,Ireland,1999-01-19,graduated,Male,NFQ Level 9,COMH,Nursing (Oncology Nursing),MSc,1 Year,FT,Education,H21,FT
+2023,2025.0,12000000343,Sarah Olson,Ireland,2000-06-29,graduated,Male,NFQ Level 9,COMH,Nursing (Specialist Mental Health Nursing Practice),MSc,1 Year,FT,Agriculture,H1,PT
+2023,2025.0,12000000353,Malik Reid,International,2000-04-19,graduated,Male,NFQ Level 9,COMH,Physiotherapy,MSc,1 Year,FT,Education,H1,FT
+2023,2025.0,12000000354,Jonathan Thompson,Ireland,2001-12-19,graduated,Male,NFQ Level 9,COMH,Radiation Therapy,MSc,1 Year,FT,Fishing,H22,FT
+2023,2025.0,12000000360,Carl James,Ireland,2001-06-04,graduated,Male,NFQ Level 9,COMH,Sports and Exercise Medicine,MMedSc,1 Year,FT,Technology,H22,PT
+2023,2025.0,12000000388,Travis Webster,International,2000-09-03,graduated,Male,NFQ Level 9,COMH,Audiology,MSc,1 Year,FT,Agriculture,H21,FT
+2023,2025.0,12000000410,Noah Martin,International,1995-02-05,graduated,Male,NFQ Level 9,COMH,Diagnostic Radiography,MSc,1 Year,FT,Education,H22,FT
+2023,2025.0,12000000417,James Long,Ireland,1997-10-15,graduated,Female,NFQ Level 9,COMH,Education,Med,1 Year,FT,Education,H22,FT
+2023,2025.0,12000000498,Maureen Nelson,Ireland,1998-08-28,graduated,Male,NFQ Level 9,COMH,Nursing (Gerontological Nursing),MSc,1 Year,FT,Forestry,H21,FT
+2023,,12000000500,Angela Miller,International,1994-11-29,dropped out,Male,NFQ Level 9,COMH,Nursing (Intensive Care Nursing),MSc,1 Year,FT,Health,H3,FT
+2023,,12000000501,Angela Rollins,International,2002-05-27,dropped out,Female,NFQ Level 9,COMH,Nursing (Oncology Nursing),MSc,1 Year,FT,Forestry,H1,FT
+2023,2025.0,12000000502,Tina Molina,International,1996-03-14,graduated,Male,NFQ Level 9,COMH,Nursing (Specialist Mental Health Nursing Practice),MSc,1 Year,FT,Technology,H21,FT
+2023,2025.0,12000000507,David Lee,Ireland,1995-02-03,graduated,Female,NFQ Level 9,COMH,Physiotherapy,MSc,1 Year,FT,Health,H22,PT
+2023,2025.0,12000000508,Renee Floyd,Ireland,1999-11-20,graduated,Female,NFQ Level 9,COMH,Radiation Therapy,MSc,1 Year,FT,Agriculture,H3,FT
+2023,2025.0,12000000518,Andrew Rivers,Ireland,1998-09-26,graduated,Female,NFQ Level 9,COMH,Sports and Exercise Medicine,MMedSc,1 Year,FT,Finance,H22,PT
+2023,2025.0,12000000556,Sarah Strickland,International,1999-03-01,graduated,Female,NFQ Level 9,COMH,Audiology,MSc,1 Year,FT,Agriculture,H22,PT
+2023,2025.0,12000000575,Anita Rivera,Ireland,1996-05-22,graduated,Male,NFQ Level 9,COMH,Diagnostic Radiography,MSc,1 Year,FT,Agriculture,H22,FT
+2023,2025.0,12000000580,Erik Porter,Ireland,2002-11-29,graduated,Male,NFQ Level 9,COMH,Education,Med,1 Year,FT,Fishing,H22,FT
+2023,2025.0,12000000642,Carlos Thomas,International,1996-06-02,graduated,Male,NFQ Level 9,COMH,Nursing (Gerontological Nursing),MSc,1 Year,FT,Finance,H22,PT
+2023,2025.0,12000000644,Roy Smith DDS,International,2000-10-01,graduated,Male,NFQ Level 9,COMH,Nursing (Intensive Care Nursing),MSc,1 Year,FT,Technology,H22,PT
+2023,2025.0,12000000646,Elizabeth Nelson,International,2002-09-16,graduated,Female,NFQ Level 9,COMH,Nursing (Oncology Nursing),MSc,1 Year,FT,Forestry,H22,FT
+2023,2025.0,12000000647,Kendra Patterson,International,2002-03-07,graduated,Female,NFQ Level 9,COMH,Nursing (Specialist Mental Health Nursing Practice),MSc,1 Year,FT,Forestry,H22,FT
+2023,2025.0,12000000658,Joseph Mitchell,International,1996-08-22,graduated,Female,NFQ Level 9,COMH,Physiotherapy,MSc,1 Year,FT,Agriculture,H1,FT
+2023,2025.0,12000000661,Sheila Gray,International,1996-06-01,graduated,Male,NFQ Level 9,COMH,Radiation Therapy,MSc,1 Year,FT,Education,H21,FT
+2023,2025.0,12000000668,Jill Robinson,International,1996-02-01,graduated,Male,NFQ Level 9,COMH,Sports and Exercise Medicine,MMedSc,1 Year,FT,Forestry,H21,FT
+2023,2025.0,12000000704,Joshua Henderson,International,2000-07-14,graduated,Male,NFQ Level 9,COMH,Audiology,MSc,1 Year,FT,Finance,H3,FT
+2023,2025.0,12000000722,Mr. Xavier Barnes MD,Ireland,1998-07-31,graduated,Female,NFQ Level 9,COMH,Diagnostic Radiography,MSc,1 Year,FT,Finance,H22,FT
+2023,2025.0,12000000725,Brandy Barker,Ireland,1995-11-23,graduated,Female,NFQ Level 9,COMH,Education,Med,1 Year,FT,Finance,H3,PT
+2023,2025.0,12000000791,Wanda Scott,International,1995-12-06,graduated,Male,NFQ Level 9,COMH,Nursing (Gerontological Nursing),MSc,1 Year,FT,Education,H22,PT
+2023,2025.0,12000000793,Brittany Lopez,Ireland,1997-01-18,graduated,Female,NFQ Level 9,COMH,Nursing (Intensive Care Nursing),MSc,1 Year,FT,Forestry,H1,PT
+2023,2025.0,12000000794,Jennifer Mcgee,International,2002-08-31,graduated,Male,NFQ Level 9,COMH,Nursing (Oncology Nursing),MSc,1 Year,FT,Health,H22,FT
+2023,2025.0,12000000796,Dr. Tina Allen,Ireland,2001-05-29,graduated,Male,NFQ Level 9,COMH,Nursing (Specialist Mental Health Nursing Practice),MSc,1 Year,FT,Finance,H22,FT
+2023,2025.0,12000000799,Colin Jensen,Ireland,1999-06-07,graduated,Male,NFQ Level 9,COMH,Physiotherapy,MSc,1 Year,FT,Finance,H1,FT
+2023,2025.0,12000000800,Carrie Mitchell,International,2001-11-19,graduated,Female,NFQ Level 9,COMH,Radiation Therapy,MSc,1 Year,FT,Finance,H3,FT
+2023,2025.0,12000000806,Albert Williams PhD,Ireland,1998-09-02,graduated,Female,NFQ Level 9,COMH,Sports and Exercise Medicine,MMedSc,1 Year,FT,Agriculture,H21,FT
+2023,2025.0,12000000820,Diane Jones,Ireland,1994-12-01,graduated,Female,NFQ Level 9,CACSSS,Work and Organisational Psychology,MA,1 Year,PT,Forestry,H22,FT
+2023,2025.0,12000000824,Ashley Cooper,Ireland,1994-07-01,graduated,Female,NFQ Level 9,COMH,"Hearing, Balance and Communication",MSc,2 Years,PT,Technology,H22,FT
+2023,2025.0,12000000826,Andrew Massey,Ireland,2000-03-07,graduated,Female,NFQ Level 9,COMH,Midwifery (Pathway),MSc,2 Years,PT,Technology,H21,PT
+2023,2025.0,12000000835,Julie Wood,International,2002-03-03,graduated,Male,NFQ Level 9,COMH,Surgical Science,MCH,2 Years,PT,Agriculture,H3,FT
+2023,2025.0,12000000840,Michael Howe,International,2001-08-11,graduated,Male,NFQ Level 9,COMH,"Hearing, Balance and Communication",MSc,2 Years,PT,Finance,H21,PT
+2023,2025.0,12000000850,Jessica Shepard,International,1997-01-18,graduated,Female,NFQ Level 9,COMH,Midwifery (Pathway),MSc,2 Years,PT,Education,H21,PT
+2023,2025.0,12000000862,Terry Gordon,Ireland,1994-03-26,graduated,Male,NFQ Level 9,COMH,Surgical Science,MCH,2 Years,PT,Forestry,H1,FT
+2023,2025.0,12000000865,Emily Schneider,International,1996-04-25,graduated,Male,NFQ Level 9,COMH,"Hearing, Balance and Communication",MSc,2 Years,PT,Finance,H22,FT
+2023,2025.0,12000000868,Kayla Brewer,Ireland,1997-07-19,graduated,Male,NFQ Level 9,COMH,Midwifery (Pathway),MSc,2 Years,PT,Finance,H21,PT
+2023,2025.0,12000000874,Erica Parrish,Ireland,2000-03-09,graduated,Female,NFQ Level 9,COMH,Surgical Science,MCH,2 Years,PT,Agriculture,H22,FT
+2023,2025.0,12000000878,Patricia Horton,International,1994-04-19,graduated,Female,NFQ Level 9,COMH,"Hearing, Balance and Communication",MSc,2 Years,PT,Finance,H21,PT
+2023,2025.0,12000000881,Christina Dixon,International,1995-01-15,graduated,Male,NFQ Level 9,COMH,Midwifery (Pathway),MSc,2 Years,PT,Finance,H22,PT
+2023,2025.0,12000000901,Terry Harrison,Ireland,1999-06-20,graduated,Female,NFQ Level 9,COMH,Surgical Science,MCH,2 Years,PT,Fishing,H22,FT
+2023,2025.0,12000000907,Olivia Merritt,International,1997-07-07,graduated,Male,NFQ Level 9,COMH,"Hearing, Balance and Communication",MSc,2 Years,PT,Forestry,H22,FT
+2023,2025.0,12000000912,Renee Romero,International,2002-01-24,graduated,Female,NFQ Level 9,COMH,Midwifery (Pathway),MSc,2 Years,PT,Health,H21,PT
+2023,2025.0,12000000925,April Rivera,Ireland,1994-04-15,graduated,Female,NFQ Level 9,COMH,Surgical Science,MCH,2 Years,PT,Finance,H22,PT
+2023,2025.0,12000000931,Richard Wright,Ireland,1996-11-07,graduated,Male,NFQ Level 9,COMH,"Hearing, Balance and Communication",MSc,2 Years,PT,Agriculture,H22,PT
+2023,2025.0,12000000933,Mrs. Stacy Bass,International,1998-11-26,graduated,Male,NFQ Level 9,COMH,Midwifery (Pathway),MSc,2 Years,PT,Technology,H22,PT
+2023,2025.0,12000000939,Tiffany Harris,Ireland,1994-06-03,graduated,Male,NFQ Level 9,COMH,Surgical Science,MCH,2 Years,PT,Forestry,H21,FT
+2023,2025.0,12000000943,Monique Dominguez,Ireland,2003-02-11,graduated,Female,NFQ Level 9,COMH,"Hearing, Balance and Communication",MSc,2 Years,PT,Education,H3,FT
+2023,2025.0,12000000950,Diana Warner,Ireland,2001-08-04,graduated,Female,NFQ Level 9,COMH,Midwifery (Pathway),MSc,2 Years,PT,Technology,H3,FT
+2023,2025.0,12000000960,Lisa Beard,Ireland,1994-12-24,graduated,Female,NFQ Level 9,COMH,Surgical Science,MCH,2 Years,PT,Fishing,H22,FT
+2023,,12000000965,Brandon Perez,International,2003-02-05,dropped out,Female,NFQ Level 9,COMH,"Hearing, Balance and Communication",MSc,2 Years,PT,Fishing,H3,PT
+2023,,12000000968,Mr. Joshua Lopez,Ireland,2002-12-12,dropped out,Male,NFQ Level 9,COMH,Midwifery (Pathway),MSc,2 Years,PT,Finance,H21,FT
+2023,2025.0,12000000979,Brian Campbell,Ireland,2001-04-15,graduated,Male,NFQ Level 9,COMH,Surgical Science,MCH,2 Years,PT,Health,H3,FT
+2023,2025.0,12000000986,Catherine Garrett,Ireland,2001-08-27,graduated,Female,NFQ Level 9,COMH,"Hearing, Balance and Communication",MSc,2 Years,PT,Health,H21,FT
+2023,2025.0,12000000991,Shannon Sparks,International,1995-06-12,graduated,Male,NFQ Level 9,COMH,Midwifery (Pathway),MSc,2 Years,PT,Fishing,H22,FT
+2023,,12000000999,Lisa Mccarthy,International,2000-01-23,dropped out,Female,NFQ Level 9,COMH,Surgical Science,MCH,2 Years,PT,Forestry,H22,PT
+2023,2024.0,12000000001,Joshua Smith,Ireland,2000-06-25,graduated,Female,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Agriculture,H22,PT
+2023,2024.0,12000000004,Stacey Hull,Ireland,1995-02-08,graduated,Female,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Finance,H21,FT
+2023,2024.0,12000000009,Eric Stevens,Ireland,1995-05-30,graduated,Male,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Health,H22,FT
+2023,2024.0,12000000032,David Stokes,Ireland,1996-11-10,graduated,Male,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Finance,H21,FT
+2023,2024.0,12000000035,Robert Wood,Ireland,1999-04-23,graduated,Male,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Finance,H21,FT
+2023,2024.0,12000000041,Michael Hunt,International,1995-04-24,graduated,Male,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Technology,H3,FT
+2023,2024.0,12000000051,Valerie Perez,International,1995-09-01,graduated,Female,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Agriculture,H21,FT
+2023,2024.0,12000000059,Christopher Fitzgerald,Ireland,1998-10-10,graduated,Female,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Health,H22,FT
+2023,2024.0,12000000060,Adam Campbell,International,1999-08-30,graduated,Female,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Fishing,H22,FT
+2023,,12000000062,Holly Ortega,Ireland,2001-04-29,dropped out,Male,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Health,H22,PT
+2023,2024.0,12000000064,Dennis Pierce,Ireland,1998-07-10,graduated,Male,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Finance,H22,FT
+2023,2024.0,12000000115,Daniel Morrison,International,2001-06-16,graduated,Male,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Agriculture,H3,PT
+2023,2024.0,12000000141,Heather Bautista,Ireland,1995-11-07,graduated,Female,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Technology,H21,FT
+2023,2024.0,12000000142,Vincent Jones,Ireland,1996-08-24,graduated,Male,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Agriculture,H22,FT
+2023,2024.0,12000000144,Ryan Fischer,Ireland,2002-07-15,graduated,Male,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Agriculture,H21,FT
+2023,2024.0,12000000165,Jesse Hampton,International,2001-04-21,graduated,Female,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Finance,H21,PT
+2023,2024.0,12000000169,David Rivera,Ireland,2001-03-13,graduated,Female,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Finance,H22,FT
+2023,2024.0,12000000174,Nicole Kelly,Ireland,1995-11-18,graduated,Female,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Education,H22,FT
+2023,2024.0,12000000192,Christy Mcpherson,Ireland,2000-08-20,graduated,Female,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Health,H21,FT
+2023,2024.0,12000000199,Brittany Stafford,International,1999-01-10,graduated,Male,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Education,H21,FT
+2023,2024.0,12000000200,Nicholas Sparks,Ireland,1997-03-10,graduated,Male,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Fishing,H21,PT
+2023,2024.0,12000000202,Thomas Fisher,Ireland,2000-02-23,graduated,Male,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Health,H22,FT
+2023,2024.0,12000000206,Mark Chapman Jr.,Ireland,1999-11-23,graduated,Male,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Health,H21,PT
+2023,2024.0,12000000248,Connor Schwartz,International,1994-10-07,graduated,Female,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Finance,H1,FT
+2023,2024.0,12000000283,Brandon Hendrix,Ireland,2001-08-30,graduated,Female,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Technology,H21,PT
+2023,2024.0,12000000285,Rachel Mcdonald,International,1994-04-30,graduated,Female,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Health,H21,PT
+2023,2024.0,12000000289,Mrs. Lisa Burke,International,1998-11-04,graduated,Female,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Health,H21,FT
+2023,2024.0,12000000306,Matthew Alvarez,International,1999-03-19,graduated,Female,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Finance,H22,PT
+2023,2024.0,12000000308,Sean Zamora,Ireland,1997-01-31,graduated,Female,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Finance,H3,FT
+2023,2024.0,12000000317,Susan Vasquez,Ireland,1996-11-17,graduated,Male,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Technology,H21,FT
+2023,2024.0,12000000331,Matthew Jones,Ireland,1997-08-28,graduated,Male,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Agriculture,H22,FT
+2023,,12000000340,Alejandro Wells,Ireland,1994-09-29,dropped out,Female,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Technology,H22,FT
+2023,2024.0,12000000341,Danielle Soto,Ireland,1995-08-22,graduated,Male,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Forestry,H21,PT
+2023,2024.0,12000000342,Leslie Elliott,Ireland,1995-04-28,graduated,Female,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Education,H3,FT
+2023,2024.0,12000000344,Linda Wilson,Ireland,2000-11-14,graduated,Female,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Technology,H1,PT
+2023,2024.0,12000000391,Ashley Walton,Ireland,1995-03-25,graduated,Female,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Fishing,H22,PT
+2023,2024.0,12000000413,Donna Rogers,International,1997-10-28,graduated,Female,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Forestry,H22,FT
+2023,2024.0,12000000415,Jeremy Nelson,International,1999-10-16,graduated,Female,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Finance,H22,PT
+2023,2024.0,12000000418,Shawn Bentley,Ireland,2000-05-17,graduated,Female,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Finance,H1,FT
+2023,2024.0,12000000436,Rachael Kelley,Ireland,1999-10-21,graduated,Male,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Health,H22,FT
+2023,2024.0,12000000438,Willie Kelly,International,2002-04-15,graduated,Male,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Fishing,H3,PT
+2023,2024.0,12000000446,Kathleen Johnson,International,2000-12-20,graduated,Female,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Fishing,H21,FT
+2023,2024.0,12000000454,Brian Burke,Ireland,1996-11-18,graduated,Male,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Education,H22,FT
+2023,2024.0,12000000465,Terry Wilson,Ireland,1997-01-10,graduated,Male,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Education,H22,FT
+2023,2024.0,12000000470,Alexander Reilly,International,1994-05-27,graduated,Male,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Health,H22,FT
+2023,2024.0,12000000471,David Pitts,Ireland,1995-09-01,graduated,Female,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Forestry,H3,FT
+2023,2024.0,12000000472,Frederick Bright,Ireland,1997-01-24,graduated,Female,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Fishing,H22,PT
+2023,2024.0,12000000513,Samantha Delgado,Ireland,1998-05-01,graduated,Male,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Finance,H21,PT
+2023,2024.0,12000000539,Christopher Ward,International,2002-11-24,graduated,Female,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Agriculture,H21,PT
+2023,2024.0,12000000540,Terry Noble,Ireland,2000-08-24,graduated,Female,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Technology,H22,PT
+2023,2024.0,12000000543,Anita Gonzalez,International,1997-02-23,graduated,Female,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Health,H1,FT
+2023,2024.0,12000000558,Brandon Roberts,International,2000-05-01,graduated,Female,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Education,H1,FT
+2023,2024.0,12000000564,Lauren Moran,International,1998-08-03,graduated,Male,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Fishing,H3,FT
+2023,2024.0,12000000570,Heather Hartman,International,2001-08-14,graduated,Female,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Forestry,H1,PT
+2023,2024.0,12000000578,Amanda Graham,Ireland,1999-11-07,graduated,Female,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Education,H22,PT
+2023,2024.0,12000000585,Jill Ramirez,International,1997-06-17,graduated,Male,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Forestry,H22,PT
+2023,2024.0,12000000586,Crystal Garza,Ireland,1997-10-25,graduated,Female,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Health,H1,PT
+2023,2024.0,12000000591,Zachary Newton,Ireland,1994-07-04,graduated,Male,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Agriculture,H1,FT
+2023,2024.0,12000000592,Todd Santos,Ireland,2002-09-30,graduated,Male,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Health,H22,FT
+2023,2024.0,12000000649,Omar Barnes,International,1995-10-14,graduated,Male,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Agriculture,H3,FT
+2023,2024.0,12000000669,Tara Wallace,Ireland,1995-06-15,graduated,Female,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Fishing,H22,FT
+2023,2024.0,12000000671,Margaret Johnson,International,2000-11-03,graduated,Male,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Education,H22,FT
+2023,2024.0,12000000674,Stephen Gutierrez,Ireland,1995-12-26,graduated,Female,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Technology,H22,FT
+2023,2024.0,12000000693,Robert Ferrell,Ireland,1998-10-04,graduated,Female,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Education,H21,PT
+2023,,12000000695,Tara Baker,International,1994-08-12,dropped out,Female,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Health,H22,PT
+2023,2024.0,12000000703,Mr. Douglas Ortiz,International,1994-07-14,graduated,Male,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Technology,H22,PT
+2023,,12000000714,Amy Thompson,International,1996-01-01,dropped out,Female,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Finance,H21,FT
+2023,2024.0,12000000720,Alexander Morris,International,2001-03-13,graduated,Female,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Education,H22,PT
+2023,2024.0,12000000724,Shaun Ruiz,Ireland,1997-11-22,graduated,Female,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Education,H21,PT
+2023,2024.0,12000000726,Shannon Roberts,International,2000-04-11,graduated,Female,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Health,H22,FT
+2023,2024.0,12000000728,Debra Campbell,Ireland,2001-03-11,graduated,Female,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Technology,H21,FT
+2023,2024.0,12000000779,Laura Johnson,International,1994-08-09,graduated,Male,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Health,H22,FT
+2023,2024.0,12000000810,Justin Galvan,International,2000-05-19,graduated,Female,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Finance,H22,FT
+2023,2024.0,12000000811,Danielle Gross,International,1994-05-05,graduated,Male,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Technology,H22,FT
+2023,2024.0,12000000815,Heidi Williams,International,2001-07-03,graduated,Female,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Health,H22,FT
+2023,2024.0,12000000842,Donald Peters,International,1994-11-12,graduated,Female,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Health,H1,FT
+2023,2024.0,12000000845,Robert Holden,International,1995-12-09,graduated,Female,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Technology,H3,FT
+2023,,12000000849,Barbara Jones,International,1997-01-25,dropped out,Male,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Forestry,H22,FT
+2023,2024.0,12000000858,Danielle Hall,Ireland,1996-07-03,graduated,Male,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Fishing,H3,PT
+2023,2024.0,12000000876,Jackson Wilson,International,2002-11-27,graduated,Male,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Fishing,H22,PT
+2023,2024.0,12000000880,Gina Black,International,1994-11-26,graduated,Male,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Education,H3,PT
+2023,2024.0,12000000883,Gregory Wright,International,2002-05-05,graduated,Male,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Technology,H22,PT
+2023,2024.0,12000000886,Adriana Doyle,International,2001-07-14,graduated,Female,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Fishing,H22,FT
+2023,2024.0,12000000919,Bianca Jones,International,2000-12-24,graduated,Female,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Forestry,H21,FT
+2023,2024.0,12000000951,Eileen Martin,Ireland,2001-10-02,graduated,Female,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Fishing,H21,PT
+2023,2024.0,12000000954,Anne Mccarthy,International,1995-10-14,graduated,Male,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Education,H1,FT
+2023,2024.0,12000000957,Megan Lee,Ireland,1998-06-28,graduated,Male,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Agriculture,H3,PT
+2023,2024.0,12000000977,Julia Flores,International,2002-07-19,graduated,Male,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Forestry,H3,FT
+2023,2024.0,12000000981,Anne Miller MD,International,2001-01-07,graduated,Female,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Agriculture,H21,PT
+2023,2024.0,12000000988,Brandon Merritt,Ireland,2001-07-02,graduated,Female,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Agriculture,H21,PT
+2023,2024.0,120000001000,Rachel Marsh,International,1995-11-16,graduated,Female,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Agriculture,H1,FT
+2023,2025.0,12000000008,Joseph Mayer,International,1996-06-12,graduated,Female,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Agriculture,H22,FT
+2023,2025.0,12000000010,John Daniels,International,1998-11-13,graduated,Male,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Fishing,H21,FT
+2023,2025.0,12000000013,Jessica Hayes,Ireland,2000-12-27,graduated,Female,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Fishing,H22,FT
+2023,2025.0,12000000015,Timothy Walters,Ireland,2001-04-07,graduated,Male,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Agriculture,H1,FT
+2023,,12000000065,Christina Rose,International,1996-10-27,dropped out,Female,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Education,H21,FT
+2023,2025.0,12000000092,Edward Davis,Ireland,2000-05-10,graduated,Male,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Finance,H22,FT
+2023,2025.0,12000000093,Jacob Ramos,International,2000-08-14,graduated,Female,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Health,H21,FT
+2023,2025.0,12000000096,Alexander Frazier,Ireland,1994-10-06,graduated,Female,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Technology,H22,PT
+2023,2025.0,12000000116,Michael Parks,International,1997-08-13,graduated,Female,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Fishing,H22,FT
+2023,2025.0,12000000118,James Butler PhD,International,2002-03-25,graduated,Female,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Fishing,H21,FT
+2023,2025.0,12000000130,John Malone,Ireland,2000-11-22,graduated,Male,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Technology,H22,FT
+2023,2025.0,12000000138,Samuel Russell,International,1999-07-05,graduated,Male,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Finance,H3,FT
+2023,2025.0,12000000154,Mrs. Stacy Williams,Ireland,1996-10-13,graduated,Male,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Agriculture,H21,FT
+2023,2025.0,12000000155,Chelsea Dyer,Ireland,1999-09-22,graduated,Male,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Finance,H21,FT
+2023,2025.0,12000000158,Cynthia Davis,Ireland,1994-10-14,graduated,Female,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Health,H21,FT
+2023,2025.0,12000000159,Eddie Salas,International,1996-12-01,graduated,Female,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Agriculture,H21,FT
+2023,2025.0,12000000204,Julia Morse,International,1996-01-26,graduated,Male,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Agriculture,H21,PT
+2023,2025.0,12000000231,Jacqueline Crawford,Ireland,1998-07-05,graduated,Female,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Agriculture,H21,FT
+2023,2025.0,12000000233,Diane Howard,Ireland,1999-05-15,graduated,Female,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Health,H22,FT
+2023,2025.0,12000000242,Kenneth Hess,International,2000-12-04,graduated,Female,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Forestry,H21,PT
+2023,2025.0,12000000263,Darrell Rice,Ireland,1994-03-31,graduated,Male,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Forestry,H22,FT
+2023,,12000000266,Jose Moore,Ireland,1995-12-30,dropped out,Male,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Forestry,H21,FT
+2023,2025.0,12000000272,Ryan Willis,Ireland,1999-12-18,graduated,Female,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Finance,H3,PT
+2023,2025.0,12000000279,Charles Arnold,Ireland,1994-12-21,graduated,Male,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Technology,H22,FT
+2023,2025.0,12000000287,Johnny Mccoy,Ireland,1997-05-23,graduated,Female,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Finance,H1,FT
+2023,2025.0,12000000290,Dawn Thomas,Ireland,2002-06-22,graduated,Female,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Finance,H3,FT
+2023,2025.0,12000000291,Matthew Fry,International,2000-12-27,graduated,Female,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Fishing,H21,FT
+2023,2025.0,12000000296,Patricia Davis,Ireland,1994-05-08,graduated,Female,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Forestry,H22,PT
+2023,2025.0,12000000348,Frances Harrison,Ireland,1994-09-22,graduated,Male,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Forestry,H3,FT
+2023,2025.0,12000000376,Kimberly Higgins,International,2002-12-20,graduated,Female,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Fishing,H21,FT
+2023,2025.0,12000000378,Kim Romero,Ireland,2001-08-06,graduated,Male,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Agriculture,H21,FT
+2023,,12000000381,Sandra Nichols,International,1997-03-30,dropped out,Male,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Technology,H21,PT
+2023,2025.0,12000000405,Paul Jensen,International,1995-09-09,graduated,Female,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Forestry,H21,PT
+2023,2025.0,12000000409,Cynthia Reed,International,2001-06-02,graduated,Male,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Education,H22,FT
+2023,2025.0,12000000419,Benjamin Conner,International,1999-08-04,graduated,Female,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Education,H22,PT
+2023,2025.0,12000000432,Barbara Stevens,Ireland,1994-06-22,graduated,Male,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Technology,H21,FT
+2023,2025.0,12000000443,Dr. Cassie Weber,International,2001-11-10,graduated,Male,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Health,H1,FT
+2023,2025.0,12000000444,Maria Best,International,2001-03-07,graduated,Male,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Health,H21,FT
+2023,2025.0,12000000448,Leslie Woodward,Ireland,2000-04-24,graduated,Male,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Education,H22,FT
+2023,,12000000452,Mrs. Kimberly Jones,International,2000-01-04,dropped out,Female,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Technology,H21,FT
+2023,2025.0,12000000504,Lisa Webb,Ireland,1996-03-02,graduated,Female,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Finance,H3,FT
+2023,2025.0,12000000535,Robert Brown,Ireland,2001-04-23,graduated,Male,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Education,H22,PT
+2023,2025.0,12000000536,Tyler Baxter,Ireland,1999-08-06,graduated,Female,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Health,H21,FT
+2023,2025.0,12000000541,Zachary Walker,International,2001-10-12,graduated,Female,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Fishing,H22,FT
+2023,2025.0,12000000567,Scott Peterson,International,1995-02-07,graduated,Female,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Finance,H21,FT
+2023,2025.0,12000000574,Gabriela Daniel,Ireland,1996-07-25,graduated,Male,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Health,H3,FT
+2023,2025.0,12000000584,Raymond Hoffman MD,Ireland,1995-02-22,graduated,Male,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Health,H22,FT
+2023,2025.0,12000000593,Patrick Cohen,International,1999-08-31,graduated,Female,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Fishing,H22,FT
+2023,2025.0,12000000599,Zachary Harper,Ireland,2003-01-24,graduated,Female,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Fishing,H3,FT
+2023,2025.0,12000000600,Connie Anderson,Ireland,1995-01-24,graduated,Male,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Technology,H22,FT
+2023,2025.0,12000000601,Bethany Jenkins,International,2000-08-15,graduated,Female,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Forestry,H3,FT
+2023,2025.0,12000000603,Carl Jacobs,Ireland,1996-08-08,graduated,Female,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Health,H22,FT
+2023,2025.0,12000000648,Richard Owen,Ireland,1996-05-26,graduated,Female,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Forestry,H22,PT
+2023,2025.0,12000000686,Keith Walton,Ireland,1997-02-17,graduated,Female,NFQ Level 9,SEFS,Analysis of Pharmaceutical Compounds,MSc,1 Year,FT,Technology,H3,FT
+2023,2025.0,12000000687,Connie Abbott,Ireland,2002-04-06,graduated,Male,NFQ Level 9,SEFS,Analytical Chemistry,MSc,1 Year,FT,Education,H21,FT
+2023,2025.0,12000000692,Stephanie Reynolds,Ireland,1999-04-22,graduated,Female,NFQ Level 9,SEFS,Applied Environmental Geoscience,MSc,1 Year,FT,Agriculture,H21,FT
+2023,2025.0,12000000710,Katie Washington,International,1995-11-12,graduated,Female,NFQ Level 9,SEFS,Computing Science,MSc,1 Year,FT,Finance,H3,FT
+2023,2025.0,12000000721,Christine Chaney,International,1999-09-09,graduated,Male,NFQ Level 9,SEFS,Data Science and Analytics,MSc,1 Year,FT,Health,H21,FT
+2023,2025.0,12000000727,Jessica Carr,International,2002-11-04,graduated,Female,NFQ Level 9,SEFS,Environmental Analytical Chemistry,MSc,1 Year,FT,Health,H21,FT
+2023,2025.0,12000000736,Megan Sampson,International,1995-10-03,graduated,Male,NFQ Level 9,SEFS,Geoinformatics,MSc,1 Year,FT,Technology,H22,FT
+2023,2025.0,12000000744,Cheyenne Richardson,International,2002-07-22,graduated,Male,NFQ Level 9,SEFS,Human Anatomy,MSc,1 Year,FT,Forestry,H3,FT
+2023,,12000000747,Gabriela Skinner,International,2002-09-17,dropped out,Female,NFQ Level 9,SEFS,Human Resource Management,MSc,1 Year,FT,Health,H21,FT
+2023,2025.0,12000000750,Teresa Blair,International,1999-11-23,graduated,Female,NFQ Level 9,SEFS,"Industrial Pharmaceutical Sciences, Operation and Management",MSc,1 Year,FT,Technology,H22,FT
+2023,2025.0,12000000751,Pamela Graham,Ireland,1998-11-25,graduated,Female,NFQ Level 9,SEFS,Interactive Media,MSc,1 Year,FT,Agriculture,H21,PT
+2023,2025.0,12000000797,Dr. Elizabeth Smith,International,2000-04-04,graduated,Male,NFQ Level 9,SEFS,Older Person Rehabilitation,MSc,1 Year,FT,Fishing,H21,FT
+2023,2025.0,12000000823,Dennis Booth,Ireland,1998-08-08,graduated,Male,NFQ Level 9,SEFS,Healthcare Quality Improvement,MSc,2 Years,Distance,Finance,H22,FT
+2023,2025.0,12000000825,Tyler Stuart,Ireland,2000-04-12,graduated,Female,NFQ Level 9,SEFS,Human Nutrition and Dietetics,MSc,2 Years,PT,Finance,H21,FT
+2023,2025.0,12000000827,Christine Sanders,Ireland,1998-02-15,graduated,Male,NFQ Level 9,SEFS,Occupational Health,MSc,2 Years,Distance,Health,H22,PT
+2023,2025.0,12000000829,Cynthia Colon,Ireland,2000-08-18,graduated,Female,NFQ Level 9,SEFS,Pharmaceutical and Biopharmaceutical Engineering,MEngSc,2 Years,PT,Technology,H1,PT
+2023,2025.0,12000000830,Tina Duffy,International,2000-02-09,graduated,Female,NFQ Level 9,SEFS,Pharmaceutical Technology & Quality Systems,MSc,2 Years,PT,Education,H22,FT
+2023,2025.0,12000000837,Scott Porter,International,2001-12-29,graduated,Male,NFQ Level 9,SEFS,Healthcare Quality Improvement,MSc,2 Years,PT,Fishing,H22,FT
+2023,2025.0,12000000844,Felicia Gibson,International,1998-06-06,graduated,Female,NFQ Level 9,SEFS,Human Nutrition and Dietetics,MSc,2 Years,PT,Health,H22,FT
+2023,2025.0,12000000855,Nathaniel Baird,International,1994-11-03,graduated,Male,NFQ Level 9,SEFS,Occupational Health,MSc,2 Years,Distance,Technology,H22,PT
+2023,2025.0,12000000856,Jennifer Turner,Ireland,2002-06-25,graduated,Female,NFQ Level 9,SEFS,Pharmaceutical and Biopharmaceutical Engineering,MEngSc,2 Years,PT,Agriculture,H3,FT
+2023,2025.0,12000000857,Douglas Lopez,International,1995-11-25,graduated,Female,NFQ Level 9,SEFS,Pharmaceutical Technology & Quality Systems,MSc,2 Years,PT,Health,H21,FT
+2023,,12000000864,Heather Fisher,Ireland,1999-05-24,dropped out,Female,NFQ Level 9,SEFS,Healthcare Quality Improvement,MSc,2 Years,PT,Agriculture,H1,FT
+2023,2025.0,12000000867,Traci Lopez,Ireland,1998-08-26,graduated,Male,NFQ Level 9,SEFS,Human Nutrition and Dietetics,MSc,2 Years,PT,Agriculture,H1,FT
+2023,2025.0,12000000869,Ricky Mitchell,Ireland,1996-07-10,graduated,Female,NFQ Level 9,SEFS,Occupational Health,MSc,2 Years,Distance,Agriculture,H21,FT
+2023,2025.0,12000000870,Adam Santos,International,2002-11-01,graduated,Female,NFQ Level 9,SEFS,Pharmaceutical and Biopharmaceutical Engineering,MEngSc,2 Years,PT,Forestry,H21,FT
+2023,2025.0,12000000871,Timothy Brown,Ireland,1995-04-01,graduated,Female,NFQ Level 9,SEFS,Pharmaceutical Technology & Quality Systems,MSc,2 Years,PT,Forestry,H3,FT
+2023,2025.0,12000000877,Benjamin Hernandez,International,2003-01-10,graduated,Female,NFQ Level 9,SEFS,Healthcare Quality Improvement,MSc,2 Years,PT,Finance,H22,FT
+2023,2025.0,12000000879,Danielle Zavala,Ireland,1998-04-25,graduated,Female,NFQ Level 9,SEFS,Human Nutrition and Dietetics,MSc,2 Years,PT,Education,H3,PT
+2023,2025.0,12000000882,Elizabeth Roberts,Ireland,1996-05-27,graduated,Male,NFQ Level 9,SEFS,Occupational Health,MSc,2 Years,Distance,Technology,H21,FT
+2023,,12000000884,Katherine Carrillo DDS,International,2001-07-11,dropped out,Female,NFQ Level 9,SEFS,Pharmaceutical and Biopharmaceutical Engineering,MEngSc,2 Years,PT,Agriculture,H21,PT
+2023,,12000000885,Rachael Wright,International,1998-02-16,dropped out,Female,NFQ Level 9,SEFS,Pharmaceutical Technology & Quality Systems,MSc,2 Years,PT,Health,H22,FT
+2023,2025.0,12000000904,Timothy Whitaker MD,Ireland,1998-06-05,graduated,Female,NFQ Level 9,SEFS,Healthcare Quality Improvement,MSc,2 Years,PT,Finance,H3,FT
+2023,2025.0,12000000910,Darrell Campbell,International,1999-02-13,graduated,Female,NFQ Level 9,SEFS,Human Nutrition and Dietetics,MSc,2 Years,PT,Agriculture,H22,PT
+2023,,12000000913,Richard Turner,Ireland,1998-02-10,dropped out,Female,NFQ Level 9,SEFS,Occupational Health,MSc,2 Years,Distance,Health,H22,FT
+2023,2025.0,12000000914,Nathan Brown,International,1994-06-15,graduated,Male,NFQ Level 9,SEFS,Pharmaceutical and Biopharmaceutical Engineering,MEngSc,2 Years,PT,Technology,H22,PT
+2023,2025.0,12000000920,Jonathan Mason,Ireland,1994-08-27,graduated,Female,NFQ Level 9,SEFS,Pharmaceutical Technology & Quality Systems,MSc,2 Years,PT,Health,H21,FT
+2023,2025.0,12000000929,Mr. Scott Blair,International,1996-11-14,graduated,Female,NFQ Level 9,SEFS,Healthcare Quality Improvement,MSc,2 Years,PT,Education,H21,PT
+2023,2025.0,12000000932,Elizabeth Alexander,International,1999-10-19,graduated,Female,NFQ Level 9,SEFS,Human Nutrition and Dietetics,MSc,2 Years,PT,Health,H3,FT
+2023,2025.0,12000000934,Julia Pittman,Ireland,1997-11-29,graduated,Female,NFQ Level 9,SEFS,Occupational Health,MSc,2 Years,Distance,Technology,H21,FT
+2023,2025.0,12000000935,Michael Turner,Ireland,1999-05-13,graduated,Male,NFQ Level 9,SEFS,Pharmaceutical and Biopharmaceutical Engineering,MEngSc,2 Years,PT,Finance,H3,FT
+2023,2025.0,12000000937,Sarah Parsons,Ireland,1996-11-08,graduated,Male,NFQ Level 9,SEFS,Pharmaceutical Technology & Quality Systems,MSc,2 Years,PT,Agriculture,H22,PT
+2023,,12000000941,Paul Shah,Ireland,2001-04-16,dropped out,Female,NFQ Level 9,SEFS,Healthcare Quality Improvement,MSc,2 Years,PT,Forestry,H1,FT
+2023,2025.0,12000000949,Isaac Larson,International,2002-09-06,graduated,Male,NFQ Level 9,SEFS,Human Nutrition and Dietetics,MSc,2 Years,PT,Fishing,H3,PT
+2023,2025.0,12000000952,Lucas Garza,International,2002-04-06,graduated,Female,NFQ Level 9,SEFS,Occupational Health,MSc,2 Years,Distance,Finance,H21,FT
+2023,,12000000953,Bethany Lewis,Ireland,1999-08-31,dropped out,Male,NFQ Level 9,SEFS,Pharmaceutical and Biopharmaceutical Engineering,MEngSc,2 Years,PT,Fishing,H1,FT
+2023,2025.0,12000000956,Cindy Shaw,Ireland,1995-02-03,graduated,Male,NFQ Level 9,SEFS,Pharmaceutical Technology & Quality Systems,MSc,2 Years,PT,Forestry,H21,FT
+2023,2025.0,12000000963,Angela Braun,Ireland,1996-08-27,graduated,Female,NFQ Level 9,SEFS,Healthcare Quality Improvement,MSc,2 Years,PT,Forestry,H22,PT
+2023,,12000000966,Jennifer Espinoza,International,1999-04-10,dropped out,Male,NFQ Level 9,SEFS,Human Nutrition and Dietetics,MSc,2 Years,PT,Forestry,H21,FT
+2023,2025.0,12000000972,Perry Morrow,Ireland,2002-02-09,graduated,Male,NFQ Level 9,SEFS,Occupational Health,MSc,2 Years,Distance,Agriculture,H3,PT
+2023,2025.0,12000000973,Alyssa Nunez,Ireland,2000-08-15,graduated,Female,NFQ Level 9,SEFS,Pharmaceutical and Biopharmaceutical Engineering,MEngSc,2 Years,PT,Health,H22,FT
+2023,2025.0,12000000975,Andrew Mason,International,1995-04-04,graduated,Male,NFQ Level 9,SEFS,Pharmaceutical Technology & Quality Systems,MSc,2 Years,PT,Technology,H21,FT
+2023,2025.0,12000000985,Amy Marshall,International,2000-04-20,graduated,Female,NFQ Level 9,SEFS,Healthcare Quality Improvement,MSc,2 Years,PT,Fishing,H22,FT
+2023,,12000000989,Brandon Prince,International,1996-04-20,dropped out,Male,NFQ Level 9,SEFS,Human Nutrition and Dietetics,MSc,2 Years,PT,Finance,H3,PT
+2023,2025.0,12000000992,Melinda Moore,International,1997-06-11,graduated,Male,NFQ Level 9,SEFS,Occupational Health,MSc,2 Years,Distance,Forestry,H3,Not Employed
+2023,2025.0,12000000993,Elizabeth Wood,Ireland,1994-04-15,graduated,Male,NFQ Level 9,SEFS,Pharmaceutical and Biopharmaceutical Engineering,MEngSc,2 Years,PT,Finance,H22,PT
+2023,2025.0,12000000994,James Simpson,Ireland,2001-01-06,graduated,Male,NFQ Level 9,SEFS,Pharmaceutical Technology & Quality Systems,MSc,2 Years,PT,Education,H3,FT

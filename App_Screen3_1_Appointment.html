@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSYNC - Appointments</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f9fb;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 1.5rem;
+            padding-bottom: 80px;
+        }
+
+        .appointment-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .appointment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .doctor-name {
+            font-weight: bold;
+            color: #264653;
+            font-size: 1.1rem;
+        }
+
+        .appointment-time {
+            color: #2A9D8F;
+            font-weight: 500;
+        }
+
+        .appointment-details {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .status-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .status-confirmed {
+            background: #e9f7f5;
+            color: #2A9D8F;
+        }
+
+        .status-pending {
+            background: #fff3e0;
+            color: #ff9800;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .edit-button {
+            color: #2A9D8F;
+            cursor: pointer;
+        }
+
+        .cancel-button {
+            color: #e76f51;
+            cursor: pointer;
+        }
+
+        /* FAB */
+        .fab {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #2A9D8F;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            cursor: pointer;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item.active {
+            color: #2A9D8F;
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="back-button" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">←</div>
+        <h2>Appointments</h2>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Appointment List -->
+        <div class="appointment-card">
+            <div class="appointment-header">
+                <div class="doctor-name">Dr. Sarah Johnson</div>
+                <div class="status-tag status-confirmed">Confirmed</div>
+            </div>
+            <div class="appointment-time">May 15, 2024 · 10:00 AM</div>
+            <div class="appointment-details">
+                <div>Cardiology Consultation</div>
+                <div>City Medical Center</div>
+            </div>
+            <div class="action-buttons">
+                <div class="edit-button" onclick="editAppointment(this)">✏️ Edit</div>
+                <div class="cancel-button" onclick="cancelAppointment(this)">🗑️ Cancel</div>
+            </div>
+        </div>
+
+        <div class="appointment-card">
+            <div class="appointment-header">
+                <div class="doctor-name">Dr. Michael Chen</div>
+                <div class="status-tag status-pending">Pending</div>
+            </div>
+            <div class="appointment-time">May 18, 2024 · 2:30 PM</div>
+            <div class="appointment-details">
+                <div>Annual Check-up</div>
+                <div>Main Street Clinic</div>
+            </div>
+            <div class="action-buttons">
+                <div class="edit-button" onclick="editAppointment(this)">✏️ Edit</div>
+                <div class="cancel-button" onclick="cancelAppointment(this)">🗑️ Cancel</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FAB -->
+    <div class="fab" onclick="window.location.href='App_Screen3_2_Appointment.html'">+</div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+        <div class="nav-item active" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+            <div class="health-data-icon"></div>
+        </div>
+        <div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+    </nav>
+
+    <script>
+        // Navigation Handling
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+
+        // Appointment Actions
+        function editAppointment(button) {
+            const card = button.closest('.appointment-card');
+            const doctorName = card.querySelector('.doctor-name').textContent;
+            const appointmentTime = card.querySelector('.appointment-time').textContent;
+            const details = card.querySelector('.appointment-details').children;
+            const type = details[0].textContent;
+            const location = details[1].textContent;
+            
+            // Create URL with appointment details as parameters
+            const params = new URLSearchParams({
+                doctor: doctorName,
+                time: appointmentTime,
+                type: type,
+                location: location
+            });
+            
+            window.location.href = `App_Screen3_2_Appointment.html?${params.toString()}`;
+        }
+
+        function cancelAppointment(button) {
+            if (confirm('Are you sure you want to cancel this appointment?')) {
+                button.closest('.appointment-card').remove();
+            }
+        }
+    </script>
+</body>
+</html>
