@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSYNC - Health Trends</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js">
+    // Add Custom Metric Function
+    function addCustomMetric() {
+        const customMetricName = prompt('Enter the name of your custom metric:');
+        if (customMetricName) {
+            const metricSelector = document.querySelector('.metric-selector');
+            const newMetricBtn = document.createElement('button');
+            newMetricBtn.className = 'metric-btn';
+            newMetricBtn.textContent = '📊 ' + customMetricName;
+            
+            // 在 Custom Item 按钮之前插入新的指标
+            const customItemBtn = document.querySelector('.metric-btn.custom-item');
+            metricSelector.insertBefore(newMetricBtn, customItemBtn);
+
+            // 添加点击事件
+            newMetricBtn.addEventListener('click', function() {
+                document.querySelectorAll('.metric-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                // 这里可以添加更新图表的逻辑
+            });
+        }
+    }
+</script>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f9fb;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .back-button {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .time-range {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .range-btn {
+            padding: 6px 12px;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+        }
+
+        .range-btn.active {
+            background: #2A9D8F;
+            color: white;
+            border-color: #2A9D8F;
+        }
+
+        .export-pdf-btn {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+
+        .export-pdf-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 1.5rem;
+            padding-bottom: 150px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Metric Selector */
+        .metric-selector {
+            display: flex;
+            gap: 0.5rem;
+            overflow-x: auto;
+            padding-bottom: 1rem;
+        }
+
+        .metric-btn {
+            flex-shrink: 0;
+            padding: 8px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .metric-btn.active {
+            border-color: #2A9D8F;
+            background: #e9f7f5;
+        }
+
+        /* Chart Container */
+        .chart-container {
+            position: relative;
+            height: 300px;
+            margin: 1.5rem 0;
+        }
+
+        /* AI Insights */
+        .ai-insight-card {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem;
+            background: #e9f7f5;
+            border-radius: 12px;
+            margin: 1rem 0;
+        }
+
+        .insight-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+
+        .compare-tool {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .nav-item.active {
+            color: #2A9D8F;
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .chart-container {
+                height: 200px;
+            }
+            
+            .header {
+                flex-direction: column;
+                gap: 1rem;
+                align-items: flex-start;
+            }
+        }
+    
+    /* Custom Item Button Style */
+    .metric-btn.custom-item {
+        background: #f0f0f0;
+        color: #2A9D8F;
+        font-weight: bold;
+        border-color: #e0e0e0;
+    }
+
+    .metric-btn.custom-item:hover {
+        background: #e5e5e5;
+    }
+</style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-controls">
+            <div class="back-button" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">←</div>
+            <h2>Health Trends</h2>
+        </div>
+        <div class="time-range">
+            <button class="range-btn active">7D</button>
+            <button class="range-btn">30D</button>
+            <button class="range-btn" onclick="handleCustomRange()">Custom</button>
+            <button class="export-pdf-btn" onclick="exportPDF()">Export PDF</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="card">
+            <!-- Metric Selector -->
+            <div class="metric-selector">
+                <button class="metric-btn active">
+                    📈 Blood Glucose
+                </button>
+                <button class="metric-btn">
+                    👟 Steps
+                </button>
+                <button class="metric-btn">
+                    ❤️ Heart Rate
+                </button>
+                <button class="metric-btn">
+                    💤 Sleep
+                </button>
+                <button class="metric-btn custom-item" onclick="addCustomMetric()">
+                    ➕ Custom Item
+                </button>
+            </div>
+
+            <!-- Chart -->
+            <div class="chart-container">
+                <canvas id="healthChart"></canvas>
+            </div>
+
+            <!-- AI Insights -->
+            <div class="ai-insight-card">
+                <div class="insight-icon">💡</div>
+                <div class="insight-content">
+                    <h4>Blood Glucose Alert</h4>
+                    <p>Your fasting glucose has exceeded 130 mg/dL on 3 of the last 7 days. Consider:</p>
+                    <ul>
+                        <li>Reducing evening carbohydrate intake</li>
+                        <li>Increasing post-dinner activity</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Comparison Tool -->
+            <div class="compare-tool">
+                <select class="primary-btn" id="compare-range" onchange="handleCompareRangeChange(this)">
+                    <option>Compare with last week</option>
+                    <option>Compare with last month</option>
+                    <option value="custom-range">Custom Range</option>
+                </select>
+                <button class="primary-btn" onclick="window.location.href='App_Screen10_3_Switch Profile.html'">🔍 Deep Analysis</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+            <div class="health-data-icon"></div>
+        </div>
+        <div class="nav-item active" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+    </nav>
+
+    <script>
+        // Initialize Chart
+        const ctx = document.getElementById('healthChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Blood Glucose (mg/dL)',
+                    data: [125, 132, 140, 138, 145, 130, 128],
+                    borderColor: '#2A9D8F',
+                    backgroundColor: 'rgba(42, 157, 143, 0.1)',
+                    tension: 0.4,
+                    pointRadius: 4,
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: false,
+                        grid: {
+                            color: '#f0f0f0'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+
+        // Interactive Elements
+        document.querySelectorAll('.metric-btn, .range-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                this.parentElement.querySelectorAll('.active').forEach(el => {
+                    el.classList.remove('active');
+                });
+                this.classList.add('active');
+                // Add data update logic here
+            });
+        });
+
+        // Navigation Handling
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+
+        // Handle Custom Range Button
+        function handleCustomRange() {
+            const customRange = prompt('Enter custom date range (e.g., "01/01/2023 - 01/07/2023"):');
+            if (customRange) {
+                alert(`Custom range selected: ${customRange}`);
+                // Add logic to update the chart or data based on the custom range
+            }
+        }
+
+        // Handle Compare Range Dropdown Change
+        function handleCompareRangeChange(select) {
+            if (select.value === 'custom-range') {
+                const customRange = prompt('Enter custom range for comparison (e.g., "01/01/2023 - 01/07/2023"):');
+                if (customRange) {
+                    alert(`Custom comparison range selected: ${customRange}`);
+                    // Add logic to update the comparison based on the custom range
+                } else {
+                    select.value = ''; // Reset if user cancels
+                }
+            }
+        }
+
+        // Export PDF Functionality
+        function exportPDF() {
+            alert('Exporting PDF...');
+            // Add PDF export logic here
+        }
+    
+    // Add Custom Metric Function
+    function addCustomMetric() {
+        const customMetricName = prompt('Enter the name of your custom metric:');
+        if (customMetricName) {
+            const metricSelector = document.querySelector('.metric-selector');
+            const newMetricBtn = document.createElement('button');
+            newMetricBtn.className = 'metric-btn';
+            newMetricBtn.textContent = '📊 ' + customMetricName;
+            
+            // 在 Custom Item 按钮之前插入新的指标
+            const customItemBtn = document.querySelector('.metric-btn.custom-item');
+            metricSelector.insertBefore(newMetricBtn, customItemBtn);
+
+            // 添加点击事件
+            newMetricBtn.addEventListener('click', function() {
+                document.querySelectorAll('.metric-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                this.classList.add('active');
+                // 这里可以添加更新图表的逻辑
+            });
+        }
+    }
+</script>
+</body>
+</html>

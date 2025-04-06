@@ -1,0 +1,765 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HealthSYNC - Profile</title>
+<style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f9fb;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .switch-profile-btn {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+
+        .switch-profile-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 1.5rem;
+            padding-bottom: 150px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Profile Section */
+        .profile-header {
+            text-align: center;
+            position: relative;
+        }
+
+        .avatar-container {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto;
+            border: 3px solid #2A9D8F;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #e9f7f5;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #2A9D8F;
+        }
+
+        .edit-profile {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+            cursor: pointer;
+            color: #2A9D8F;
+        }
+
+        .edit-profile:hover {
+            opacity: 0.9;
+        }
+
+        /* Input Fields */
+        .input-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #2A9D8F;
+        }
+
+        .gray-placeholder::placeholder {
+            color: #888;
+        }
+
+        /* Profile Settings Styles */
+        .settings-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .password-form input {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+        }
+
+        .device-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            margin: 0.5rem 0;
+        }
+
+        .device-status {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #2A9D8F;
+        }
+
+        .shared-with {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .permission-tag {
+            background: #e9f7f5;
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+        }
+
+        /* Checkbox Style */
+        .checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox input {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        /* Privacy & Data Sharing Title */
+        .privacy-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logout Button */
+        .logout-btn {
+            width: 100%;
+            padding: 16px;
+            background: #e76f51;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: opacity 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .logout-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .nav-item.active {
+            color: #2A9D8F;
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+    
+        .upgrade-button {
+            background: linear-gradient(45deg, #2A9D8F, #264653);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        
+        .upgrade-button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        
+        .upgrade-button {
+            background: linear-gradient(45deg, #2A9D8F, #264653);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            margin-right: 10px;
+        }
+        
+        .upgrade-button:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+        
+        .upgrade-button {
+            background-color: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 10px;
+            font-family: 'Arial', sans-serif;
+            transition: opacity 0.3s ease;
+        }
+        
+        .upgrade-button:hover {
+            opacity: 0.9;
+        }
+        
+        /* 输入框容器的响应式样式 */
+        .input-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .input-group input {
+            flex: 1;
+            min-width: 250px;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        @media (max-width: 768px) {
+            .input-group {
+                flex-direction: column;
+            }
+            
+            .input-group input {
+                width: 100%;
+                min-width: 0;
+            }
+        }
+
+        /* Medical History List Styles */
+        #medical-history-list {
+            margin: 1rem 0;
+        }
+
+        .medical-history-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem;
+            background: #f5f9fb;
+            border-radius: 8px;
+        }
+
+        .medical-history-item input {
+            flex: 1;
+            padding: 0.5rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .medical-history-item button {
+            padding: 0.25rem 0.5rem;
+            background: #e76f51;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* Loading Indicator */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading.active {
+            display: flex;
+        }
+        </style>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+<div class="header-left">
+<button class="back-button" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">←</button>
+<h2>My Profile</h2>
+</div>
+<div style="display: flex; gap: 10px; align-items: center;"></div><div style="display: flex; gap: 10px; align-items: center;"><button class="switch-profile-btn" onclick="window.location.href='App_Screen6_1_Upgrade.html'">Upgrade to Pro</button><button class="switch-profile-btn" onclick="window.location.href='App_Screen10_1_Switch Profile.html'">Switch Profile</button></div></header>
+<!-- Main Content -->
+<main class="main-content">
+<!-- Profile Card -->
+<div class="card profile-header">
+<div class="avatar-container">
+                A
+            </div>
+<div class="edit-profile" onclick="editProfile()">
+                🖊 Edit
+            </div>
+<div class="input-group">
+<input class="gray-placeholder" placeholder="Username" type="text"/>
+<input class="gray-placeholder" placeholder="Email Address" type="text"/>
+</div>
+</div>
+<!-- Connected Devices -->
+<div class="settings-card">
+<h3>📱 Connected Devices</h3>
+<div class="device-card">
+<div class="device-status"></div>
+<div>
+<div>Apple Watch Series 8</div>
+<div class="text-muted">Last synced: 2 mins ago</div>
+</div>
+<button class="disconnect-btn" onclick="disconnectDevice()">Disconnect</button>
+</div>
+<button class="primary-btn" onclick="window.location.href='App_Screen8_My Profile.html'">➕ Connect New Device</button>
+</div>
+<!-- Notifications -->
+<div class="settings-card">
+<h3>🔔 Notifications</h3>
+<div class="setting-item">
+<span>Medication Reminders</span>
+<div class="checkbox">
+<input id="medication-reminders" type="checkbox"/>
+</div>
+</div>
+<div class="setting-item">
+<span>Appointment Alerts</span>
+<div class="checkbox">
+<input id="appointment-alerts" type="checkbox"/>
+</div>
+</div>
+</div>
+<!-- Account Security -->
+<div class="settings-card">
+<h3>🔒 Account Security</h3>
+<div class="setting-item">
+<span>Change Password</span>
+<button onclick="showPasswordForm()">Modify</button>
+</div>
+<div class="password-form" id="passwordForm" style="display:none;">
+<input placeholder="Current Password" type="password"/>
+<input placeholder="New Password" type="password"/>
+<input placeholder="Confirm New Password" type="password"/>
+<button class="save-btn" onclick="updatePassword()">Save Changes</button>
+</div>
+<div class="setting-item">
+<span>Account Deletion</span>
+<button class="danger-btn" onclick="deleteAccount()">Delete Permanently</button>
+</div>
+</div>
+<!-- Privacy & Data Sharing -->
+<div class="settings-card">
+<div class="privacy-title">
+<h3>🛡️ Privacy &amp; Data Sharing</h3>
+<button onclick="window.location.href='App_Screen7_Privacy&amp;Data Sharing.html'">Modify</button>
+</div>
+</div>
+<!-- Logout Button -->
+<button class="logout-btn" onclick="logout()">Logout</button>
+</main>
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+<div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+<div class="nav-item" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+<div class="nav-item" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+<div class="health-data-icon"></div>
+</div>
+<div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+<div class="nav-item active" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+</nav>
+<script>
+        const API_BASE_URL = 'http://127.0.0.1:5000/api';
+        let userData = {};
+        let connectedDevices = [];
+        let notificationSettings = {};
+
+        // 检查用户是否已登录
+        function checkAuth() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (!user) {
+                window.location.href = 'APP_Screen1_Welcome&Login.html';
+                return false;
+            }
+            return true;
+        }
+
+        // 页面加载时检查登录状态和加载用户档案
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!checkAuth()) return;
+            loadUserProfile();
+        });
+
+        // 加载用户档案
+        async function loadUserProfile() {
+            try {
+                const user = JSON.parse(localStorage.getItem('user'));
+                const response = await fetch(`${API_BASE_URL}/user-profile?userId=${user.id}`);
+                
+                if (!response.ok) {
+                    throw new Error('Failed to load user profile');
+                }
+
+                const profile = await response.json();
+                fillProfileForm(profile);
+            } catch (error) {
+                console.error('Error loading user profile:', error);
+                alert('Failed to load user profile. Please try again later.');
+            }
+        }
+
+        // 填充档案表单
+        function fillProfileForm(profile) {
+            document.getElementById('name').value = profile.name || '';
+            document.getElementById('email').value = profile.email || '';
+            document.getElementById('phone').value = profile.phone || '';
+            document.getElementById('address').value = profile.address || '';
+            document.getElementById('emergency-contact').value = profile.emergencyContact || '';
+            
+            // 填充医疗历史
+            const medicalHistoryList = document.getElementById('medical-history-list');
+            medicalHistoryList.innerHTML = '';
+            
+            if (profile.medicalHistory && profile.medicalHistory.length > 0) {
+                profile.medicalHistory.forEach(item => {
+                    addMedicalHistoryItem(item);
+                });
+            }
+        }
+
+        // 添加医疗历史项目
+        function addMedicalHistoryItem(item = '') {
+            const medicalHistoryList = document.getElementById('medical-history-list');
+            const listItem = document.createElement('div');
+            listItem.className = 'medical-history-item';
+            listItem.innerHTML = `
+                <input type="text" value="${item}" placeholder="Enter medical condition">
+                <button onclick="removeMedicalHistoryItem(this)">Remove</button>
+            `;
+            medicalHistoryList.appendChild(listItem);
+        }
+
+        // 移除医疗历史项目
+        function removeMedicalHistoryItem(button) {
+            button.closest('.medical-history-item').remove();
+        }
+
+        // Voice-to-text for notes
+        function startVoiceToText(targetId) {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert('Your browser does not support voice-to-text. Please use Chrome or Edge.');
+                return;
+            }
+
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.start();
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                document.getElementById(targetId).value = transcript;
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Voice recognition error:', event.error);
+                alert('Error occurred in voice recognition. Please try again.');
+            };
+        }
+
+        // Save profile data
+        async function saveData() {
+            if (!checkAuth()) return;
+
+            const user = JSON.parse(localStorage.getItem('user'));
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+            const emergencyContact = document.getElementById('emergency-contact').value;
+
+            // 收集医疗历史
+            const medicalHistory = [];
+            document.querySelectorAll('.medical-history-item input').forEach(input => {
+                if (input.value.trim()) {
+                    medicalHistory.push(input.value.trim());
+                }
+            });
+
+            if (!name || !email) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('userId', user.id);
+            formData.append('name', name);
+            formData.append('email', email);
+            formData.append('phone', phone);
+            formData.append('address', address);
+            formData.append('emergencyContact', emergencyContact);
+            formData.append('medicalHistory', JSON.stringify(medicalHistory));
+            formData.append('preferences', JSON.stringify({
+                notifications: document.getElementById('notifications').checked,
+                dataSharing: document.getElementById('data-sharing').checked,
+                theme: document.getElementById('theme').value
+            }));
+
+            try {
+                document.querySelector('.loading').classList.add('active');
+                
+                const response = await fetch(`${API_BASE_URL}/user-profile`, {
+                    method: 'PUT',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to save profile data');
+                }
+
+                const result = await response.json();
+                alert('Profile data saved successfully!');
+                
+                // 更新本地存储中的用户名
+                const storedUser = JSON.parse(localStorage.getItem('user'));
+                storedUser.name = name;
+                localStorage.setItem('user', JSON.stringify(storedUser));
+                
+            } catch (error) {
+                console.error('Error saving profile data:', error);
+                alert('Failed to save profile data. Please try again later.');
+            } finally {
+                document.querySelector('.loading').classList.remove('active');
+            }
+        }
+
+        // Navigation Handling
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+    <!-- Loading Indicator -->
+    <div class="loading">
+        <div>Saving data...</div>
+    </div>
+</body>
+</html>

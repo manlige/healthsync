@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSYNC - Dashboard</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f9fb;
+            min-height: 100vh;
+        }
+
+        /* 顶部导航 */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #2A9D8F;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .switch-profile {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        /* 主要内容区域 */
+        .main-content {
+            padding: 1.5rem;
+            padding-bottom: 80px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        .health-summary {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .health-summary {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .health-summary {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .metric {
+            padding: 1rem;
+            position: relative;
+        }
+
+        .metric-value {
+            font-size: 1.8rem;
+            color: #2A9D8F;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        .bgm-indicator {
+            color: #e63946;
+            font-size: 1.2rem;
+        }
+
+        .target-range {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 0.5rem;
+        }
+
+        /* 底部导航 */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item.active {
+            color: #2A9D8F;
+        }
+
+        /* 交互元素 */
+        .reminder-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .symptom-button {
+            background: #2A9D8F;
+            color: white;
+            padding: 1rem;
+            border-radius: 12px;
+            text-align: center;
+            margin-top: 1rem;
+            cursor: pointer;
+        }
+
+        .reminder-arrow {
+            font-size: 1.2rem;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #2A9D8F;
+            padding: 0;
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- 顶部导航 -->
+    <header class="header">
+        <div class="user-info">
+            <div class="user-avatar">A</div>
+            <h2>Hi, Alice!</h2>
+        </div>
+        <div class="header-actions">
+            <button class="switch-profile" onclick="window.location.href='App_Screen10_1_Switch Profile.html'">Switch Profile</button>
+        </div>
+    </header>
+
+    <!-- 主要内容 -->
+    <main class="main-content">
+        <!-- 健康摘要 -->
+        <div class="card health-summary">
+            <div class="metric">
+                <div class="metric-value">8,888</div>
+                <div class="metric-label">Steps</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">80</div>
+                <div class="metric-label">BPM</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">
+                    188
+                    <span class="bgm-indicator">↑</span>
+                </div>
+                <div class="metric-label">BGM</div>
+                <div class="target-range">Target Range: 70 - 140 mg/dL</div>
+            </div>
+            <div class="metric">
+                <div class="metric-value">60kg</div>
+                <div class="metric-label">Weight</div>
+            </div>
+        </div>
+
+        <!-- 预约 -->
+        <div class="card">
+            <h3>📅 Upcoming Appointments</h3>
+            <div class="reminder-item">
+                <div>
+                    <div>Dr. Smith - Endocrinology</div>
+                    <div class="text-muted">Tomorrow 10:00 AM</div>
+                </div>
+                <button class="reminder-arrow" onclick="window.location.href='App_Screen3_1_Appointment.html'">→</button>
+            </div>
+        </div>
+
+        <!-- 药物提醒 -->
+        <div class="card">
+            <h3>💊 Medication Reminders</h3>
+            <div class="reminder-item">
+                <div>
+                    <div>Long-acting Insulin</div>
+                    <div class="text-muted">Due in 2 hours</div>
+                </div>
+                <button class="reminder-arrow confirm-button" onclick="window.location.href='App_Screen4_1_Health Data.html'">→</button>
+            </div>
+        </div>
+
+        <!-- 健康数据跟踪 -->
+        <div class="symptom-button" onclick="window.location.href='App_Screen4_2_Health Data.html'">➕ Log Health Data</div>
+    </main>
+
+    <!-- 底部导航 -->
+    <nav class="bottom-nav">
+        <div class="nav-item active" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+            <div class="health-data-icon"></div>
+        </div>
+        <div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+    </nav>
+
+    <script>
+        const API_BASE_URL = 'http://127.0.0.1:5000/api';
+
+        // 加载用户资料
+        async function loadUserProfile() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/profile`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load user profile');
+                }
+
+                const data = await response.json();
+                // 更新用户头像和名称
+                const userAvatar = document.querySelector('.user-avatar');
+                const userName = document.querySelector('.user-info h2');
+                
+                userAvatar.textContent = data.username[0].toUpperCase();
+                userName.textContent = `Hi, ${data.username}!`;
+            } catch (error) {
+                console.error('Failed to load profile:', error);
+            }
+        }
+
+        // 加载健康数据
+        async function loadHealthData() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/health-records/latest`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    if (response.status === 404) {
+                        return; // 没有健康记录
+                    }
+                    throw new Error('Failed to load health data');
+                }
+
+                const data = await response.json();
+                if (data) {
+                    // 更新健康摘要数据
+                    const metrics = document.querySelectorAll('.metric');
+                    metrics[0].querySelector('.metric-value').textContent = data.steps || '8,888';
+                    metrics[1].querySelector('.metric-value').textContent = data.heart_rate || '80';
+                    metrics[2].querySelector('.metric-value').textContent = data.blood_sugar || '188';
+                    metrics[3].querySelector('.metric-value').textContent = `${data.weight || '60'}kg`;
+                }
+            } catch (error) {
+                console.error('Failed to load health data:', error);
+            }
+        }
+
+        // 加载预约信息
+        async function loadAppointments() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/appointments`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load appointments');
+                }
+
+                const appointments = await response.json();
+                if (appointments && appointments.length > 0) {
+                    const appointment = appointments[0]; // 获取最近的预约
+                    const appointmentDiv = document.querySelector('.reminder-item');
+                    const date = new Date(appointment.appointment_time);
+                    
+                    appointmentDiv.innerHTML = `
+                        <div>
+                            <div>${appointment.doctor_name} - ${appointment.appointment_type}</div>
+                            <div class="text-muted">${date.toLocaleString()}</div>
+                        </div>
+                        <button class="reminder-arrow" onclick="window.location.href='App_Screen3_1_Appointment.html'">→</button>
+                    `;
+                }
+            } catch (error) {
+                console.error('Failed to load appointments:', error);
+            }
+        }
+
+        // 页面加载时获取数据
+        window.addEventListener('load', () => {
+            loadUserProfile();
+            loadHealthData();
+            loadAppointments();
+        });
+
+        // 保留原有的事件处理程序
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+
+        document.querySelector('.health-summary').addEventListener('click', () => {
+            alert('Showing detailed health metrics...');
+        });
+
+        document.querySelector('.confirm-button').addEventListener('click', function() {
+            this.style.color = '#1d7a6b';
+            this.style.cursor = 'not-allowed';
+            this.disabled = true;
+        });
+    </script>
+</body>
+</html>

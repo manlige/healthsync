@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Monitoring Dashboard</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* 基础样式 */
+        :root {
+            --critical-color: #ef4444;
+            --warning-color: #f59e0b;
+            --normal-color: #10b981;
+            --primary-color: #10b981;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+
+        .monitoring-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 80px;
+        }
+
+        /* 实时指标看板 */
+        .vitals-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .vital-card {
+            padding: 1.5rem;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .vital-card.critical {
+            background: #fee2e2;
+            border-left: 4px solid var(--critical-color);
+        }
+
+        /* 趋势可视化 */
+        .trend-section {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        /* 医疗级色码系统 */
+        .status-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .critical { background: var(--critical-color); }
+        .warning { background: var(--warning-color); }
+        .normal { background: var(--normal-color); }
+
+        /* 底部导航 */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .nav-item.active {
+            color: var(--primary-color);
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="monitoring-container">
+        <!-- 标题 -->
+        <div class="profile-header">
+            <div class="back-arrow" onclick="window.location.href='App_Screen10_2_Switch Profile.html'">←</div>
+            <h1>Health Monitoring Dashboard</h1>
+        </div>
+        
+        <!-- 实时生命体征 -->
+        <div class="vitals-grid">
+            <div class="vital-card">
+                <h3>Heart Rate <span class="status-indicator normal"></span></h3>
+                <div class="real-time-value">72 bpm</div>
+                <div class="variation">±2 bpm (5min)</div>
+            </div>
+            
+            <div class="vital-card critical">
+                <h3>BGM <span class="status-indicator critical"></span></h3>
+                <div class="real-time-value">165 mg/dL</div>
+                <div class="variation">↑ 23% from baseline</div>
+            </div>
+        </div>
+
+        <!-- 趋势分析区 -->
+        <div class="trend-section">
+            <div class="main-trend">
+                <canvas id="bgmTrend"></canvas>
+            </div>
+            <div class="secondary-metrics">
+                <div class="metric-card">
+                    <h4>Metabolic Summary</h4>
+                    <ul>
+                        <li>Avg Daily Steps: 8,432</li>
+                        <li>Sleep Efficiency: 87%</li>
+                        <li>Stress Level: Moderate</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 医疗警报系统 -->
+        <div class="alert-system">
+            <h2>Clinical Alerts</h2>
+            <div class="alert-card">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-content">
+                    <h3>Persistent Hyperglycemia Detected</h3>
+                    <p>3 consecutive readings above 150 mg/dL</p>
+                    <button class="action-btn" onclick="window.location.href='App_Screen4_1_Health Data.html'">Review Medication</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom SVG definition -->
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+        <symbol id="health-icon" viewBox="0 0 24 24">
+            <path fill="#FF0000" d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+        </symbol>
+    </svg>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+            <div class="health-data-icon"></div>
+        </div>
+        <div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+    </nav>
+
+    <script>
+        const API_BASE_URL = 'http://127.0.0.1:5000/api';
+        let patientData = {};
+        let healthMetrics = {};
+        let trends = {};
+
+        // 页面加载时获取患者数据
+        document.addEventListener('DOMContentLoaded', async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const patientId = urlParams.get('patientId');
+            
+            if (!patientId) {
+                showAlert('Patient ID not found', 'error');
+                return;
+            }
+
+            await Promise.all([
+                loadPatientData(patientId),
+                loadHealthMetrics(patientId),
+                loadTrends(patientId)
+            ]);
+        });
+
+        // 加载患者基本信息
+        async function loadPatientData(patientId) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/patients/${patientId}`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load patient data');
+                }
+
+                patientData = await response.json();
+                displayPatientInfo();
+            } catch (error) {
+                console.error('Error loading patient data:', error);
+                showAlert('Failed to load patient data', 'error');
+            }
+        }
+
+        // 显示患者信息
+        function displayPatientInfo() {
+            const patientName = document.querySelector('.patient-info h2');
+            const patientAge = document.querySelector('.patient-info p:nth-child(2)');
+            const patientId = document.querySelector('.patient-info p:nth-child(3)');
+            const avatar = document.querySelector('.patient-avatar img');
+            
+            patientName.textContent = patientData.name || 'Patient Name';
+            patientAge.textContent = `Age: ${patientData.age || 'N/A'}`;
+            patientId.textContent = `ID: ${patientData.id || 'N/A'}`;
+            
+            if (patientData.avatar) {
+                avatar.src = patientData.avatar;
+            }
+        }
+
+        // 加载健康指标
+        async function loadHealthMetrics(patientId) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/patients/${patientId}/metrics`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load health metrics');
+                }
+
+                healthMetrics = await response.json();
+                displayHealthMetrics();
+            } catch (error) {
+                console.error('Error loading health metrics:', error);
+                showAlert('Failed to load health metrics', 'error');
+            }
+        }
+
+        // 显示健康指标
+        function displayHealthMetrics() {
+            // 更新各项指标
+            updateMetric('blood-pressure', healthMetrics.bloodPressure);
+            updateMetric('heart-rate', healthMetrics.heartRate);
+            updateMetric('blood-sugar', healthMetrics.bloodSugar);
+            updateMetric('temperature', healthMetrics.temperature);
+            updateMetric('weight', healthMetrics.weight);
+            updateMetric('steps', healthMetrics.steps);
+        }
+
+        // 更新单个指标显示
+        function updateMetric(id, value) {
+            const element = document.getElementById(id);
+            if (element && value !== undefined) {
+                element.textContent = value;
+                
+                // 根据指标值设置状态颜色
+                const status = getMetricStatus(id, value);
+                element.className = `metric-value ${status}`;
+            }
+        }
+
+        // 获取指标状态
+        function getMetricStatus(metricId, value) {
+            const thresholds = {
+                'blood-pressure': { low: 90, high: 140 },
+                'heart-rate': { low: 60, high: 100 },
+                'blood-sugar': { low: 70, high: 180 },
+                'temperature': { low: 36.1, high: 37.2 },
+                'weight': null, // 需要根据患者历史数据判断
+                'steps': null   // 需要根据患者目标判断
+            };
+
+            const threshold = thresholds[metricId];
+            if (!threshold) return 'normal';
+
+            if (value < threshold.low) return 'low';
+            if (value > threshold.high) return 'high';
+            return 'normal';
+        }
+
+        // 加载趋势数据
+        async function loadTrends(patientId) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/patients/${patientId}/trends`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load trends');
+                }
+
+                trends = await response.json();
+                displayTrends();
+            } catch (error) {
+                console.error('Error loading trends:', error);
+                showAlert('Failed to load trends', 'error');
+            }
+        }
+
+        // 显示趋势数据
+        function displayTrends() {
+            // 更新趋势图表
+            updateTrendChart('blood-pressure-trend', trends.bloodPressure);
+            updateTrendChart('heart-rate-trend', trends.heartRate);
+            updateTrendChart('blood-sugar-trend', trends.bloodSugar);
+            updateTrendChart('weight-trend', trends.weight);
+        }
+
+        // 更新趋势图表
+        function updateTrendChart(chartId, data) {
+            const canvas = document.getElementById(chartId);
+            if (!canvas || !data) return;
+
+            const ctx = canvas.getContext('2d');
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: data.labels,
+                    datasets: [{
+                        label: data.label,
+                        data: data.values,
+                        borderColor: '#3b82f6',
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: false
+                        }
+                    }
+                }
+            });
+        }
+
+        // 显示提示信息
+        function showAlert(message, type = 'info') {
+            // 创建提示元素
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert ${type}`;
+            alertDiv.textContent = message;
+            
+            // 添加到页面
+            document.body.appendChild(alertDiv);
+            
+            // 3秒后移除
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 3000);
+        }
+
+        // 添加提示样式
+        const style = document.createElement('style');
+        style.textContent = `
+            .alert {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                color: white;
+                z-index: 1000;
+                animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+            }
+            
+            .alert.success {
+                background-color: #10b981;
+            }
+            
+            .alert.error {
+                background-color: #ef4444;
+            }
+            
+            .alert.info {
+                background-color: #3b82f6;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(-20px); }
+            }
+
+            .metric-value {
+                font-size: 24px;
+                font-weight: bold;
+                margin: 10px 0;
+            }
+
+            .metric-value.normal {
+                color: #10b981;
+            }
+
+            .metric-value.low {
+                color: #3b82f6;
+            }
+
+            .metric-value.high {
+                color: #ef4444;
+            }
+
+            .trend-chart {
+                height: 200px;
+                margin: 20px 0;
+            }
+        `;
+        document.head.appendChild(style);
+
+        // BGM 趋势图
+        const ctx = document.getElementById('bgmTrend').getContext('2d');
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
+                datasets: [{
+                    label: 'BGM (mg/dL)',
+                    data: [95, 90, 130, 165, 155, 125],
+                    borderColor: '#ef4444',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        suggestedMin: 70,
+                        suggestedMax: 200
+                    }
+                }
+            }
+        });
+
+        // 导航交互
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

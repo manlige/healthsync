@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctor Profile - HealthSync</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+
+        /* Doctor Specific Styles */
+        :root {
+            --primary-color: #10b981; /* Green color */
+            --alert-color: #ef4444; /* Red */
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+
+        .doctor-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 80px;
+        }
+
+        /* Profile Header */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .back-arrow {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .switch-profile-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .switch-profile-btn:hover {
+            background-color: #0d9f6e;
+        }
+
+        /* Patient Grid */
+        .patient-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .patient-card {
+            padding: 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .patient-card.active {
+            border-color: var(--primary-color);
+            background: #f0fdf4;
+        }
+
+        .patient-status {
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #ccc;
+            margin-right: 0.5rem;
+        }
+
+        .status-indicator.critical {
+            background: var(--alert-color);
+        }
+
+        /* Health Monitoring Section */
+        .health-timeline {
+            margin-bottom: 2rem;
+        }
+
+        .critical-trend {
+            background: #fee2e2;
+            border-left: 4px solid var(--alert-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+
+        .critical-trend h4 {
+            margin-top: 0;
+            color: var(--alert-color);
+        }
+
+        .critical-trend ul {
+            margin: 0.5rem 0 1rem 1.5rem;
+            padding: 0;
+        }
+
+        .critical-trend ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .review-health-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: 100%;
+            margin-top: 1.5rem;
+        }
+
+        .review-health-btn:hover {
+            background-color: #0d9f6e;
+        }
+
+        /* Clinical Notes */
+        .clinical-notes {
+            margin-top: 2rem;
+        }
+
+        .notes-editor {
+            width: 100%;
+            height: 150px;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            margin-top: 1rem;
+            font-family: inherit;
+        }
+
+        .ehr-save-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+            width: 100%;
+        }
+
+        .ehr-save-btn:hover {
+            background-color: #0d9f6e;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .nav-item.active {
+            color: var(--primary-color);
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="doctor-container">
+        <!-- Profile Switching -->
+        <div class="profile-header">
+            <div class="back-arrow" onclick="window.location.href='App_Screen6_My Profiles.html'">←</div>
+            <h1>Switch Profile</h1>
+        </div>
+
+        <!-- Other Profiles Section -->
+        <div class="section-header">
+            <h2>Other Profiles</h2>
+            <button class="switch-profile-btn" onclick="window.location.href='App_Screen6_My Profiles.html'">Switch Profiles</button>
+        </div>
+
+        <!-- Patient Grid -->
+        <div class="patient-grid">
+            <div class="patient-card active" onclick="loadPatientData('p1')">
+                <h3>Alice Johnson</h3>
+                <p>Last check: 4 hours ago</p>
+                <div class="patient-status">
+                    <span class="status-indicator critical"></span> Needs attention
+                </div>
+            </div>
+            <div class="patient-card" onclick="loadPatientData('p2')">
+                <h3>Bob Wilson</h3>
+                <p>Last check: 1 day ago</p>
+                <div class="patient-status">
+                    <span class="status-indicator"></span> Stable
+                </div>
+            </div>
+        </div>
+
+        <!-- Health Monitoring Section -->
+        <div class="health-timeline">
+            <h2>Health Monitoring</h2>
+            <div class="vitals-chart"></div>
+            <div class="medication-history"></div>
+
+            <!-- Critical Trend Section -->
+            <div class="critical-trend">
+                <h4>⚠️ Critical Trend Detected</h4>
+                <p>4 consecutive high glucose readings</p>
+                <ul>
+                    <li>Review medication records</li>
+                    <li>Suggest HbA1c test</li>
+                </ul>
+            </div>
+
+            <!-- Review Health Log Button -->
+            <button class="review-health-btn" onclick="window.location.href='App_Screen10_3_Switch Profile.html'">Review Health Log</button>
+        </div>
+
+        <!-- Clinical Notes -->
+        <div class="clinical-notes">
+            <h3>Patient Notes</h3>
+            <textarea class="notes-editor" placeholder="Enter clinical notes..."></textarea>
+            <button class="ehr-save-btn">Save to EHR</button>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+            <div class="health-data-icon"></div>
+        </div>
+        <div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+    </nav>
+
+    <script>
+        const API_BASE_URL = 'http://127.0.0.1:5000/api';
+        let doctorInfo = {};
+        let patients = [];
+
+        // 页面加载时获取医生信息和患者列表
+        document.addEventListener('DOMContentLoaded', async () => {
+            await Promise.all([
+                loadDoctorInfo(),
+                loadPatients()
+            ]);
+        });
+
+        // 加载医生信息
+        async function loadDoctorInfo() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/profiles/doctor`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load doctor info');
+                }
+
+                doctorInfo = await response.json();
+                displayDoctorInfo();
+            } catch (error) {
+                console.error('Error loading doctor info:', error);
+                showAlert('Failed to load doctor info', 'error');
+            }
+        }
+
+        // 显示医生信息
+        function displayDoctorInfo() {
+            const doctorName = document.querySelector('.doctor-info h2');
+            const specialization = document.querySelector('.doctor-info p:nth-child(2)');
+            const hospital = document.querySelector('.doctor-info p:nth-child(3)');
+            const avatar = document.querySelector('.doctor-avatar img');
+            
+            doctorName.textContent = doctorInfo.name || 'Dr. John Doe';
+            specialization.textContent = doctorInfo.specialization || 'General Physician';
+            hospital.textContent = doctorInfo.hospital || 'City Hospital';
+            
+            if (doctorInfo.avatar) {
+                avatar.src = doctorInfo.avatar;
+            }
+        }
+
+        // 加载患者列表
+        async function loadPatients() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/patients`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load patients');
+                }
+
+                patients = await response.json();
+                displayPatients();
+            } catch (error) {
+                console.error('Error loading patients:', error);
+                showAlert('Failed to load patients', 'error');
+            }
+        }
+
+        // 显示患者列表
+        function displayPatients() {
+            const patientList = document.querySelector('.patient-list');
+            patientList.innerHTML = '';
+
+            patients.forEach(patient => {
+                const patientCard = createPatientCard(patient);
+                patientList.appendChild(patientCard);
+            });
+        }
+
+        // 创建患者卡片
+        function createPatientCard(patient) {
+            const card = document.createElement('div');
+            card.className = 'patient-card';
+            
+            card.innerHTML = `
+                <div class="patient-avatar">
+                    <img src="${patient.avatar || 'default-avatar.png'}" alt="${patient.name}">
+                </div>
+                <div class="patient-info">
+                    <h3>${patient.name}</h3>
+                    <p>Age: ${patient.age}</p>
+                    <p>Last Visit: ${new Date(patient.lastVisit).toLocaleDateString()}</p>
+                </div>
+                <button class="view-btn" onclick="viewPatient('${patient.id}')">
+                    View Details
+                </button>
+            `;
+
+            return card;
+        }
+
+        // 查看患者详情
+        function viewPatient(patientId) {
+            window.location.href = `App_Screen10_3_Switch Profile.html?patientId=${patientId}`;
+        }
+
+        // 显示提示信息
+        function showAlert(message, type = 'info') {
+            // 创建提示元素
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert ${type}`;
+            alertDiv.textContent = message;
+            
+            // 添加到页面
+            document.body.appendChild(alertDiv);
+            
+            // 3秒后移除
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 3000);
+        }
+
+        // 添加提示样式
+        const style = document.createElement('style');
+        style.textContent = `
+            .alert {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                color: white;
+                z-index: 1000;
+                animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+            }
+            
+            .alert.success {
+                background-color: #10b981;
+            }
+            
+            .alert.error {
+                background-color: #ef4444;
+            }
+            
+            .alert.info {
+                background-color: #3b82f6;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(-20px); }
+            }
+
+            .patient-card {
+                display: flex;
+                align-items: center;
+                padding: 15px;
+                margin-bottom: 10px;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+            }
+
+            .patient-card:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .patient-avatar {
+                width: 50px;
+                height: 50px;
+                margin-right: 15px;
+            }
+
+            .patient-avatar img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .patient-info {
+                flex: 1;
+            }
+
+            .patient-info h3 {
+                margin: 0;
+                font-size: 16px;
+                color: #1f2937;
+            }
+
+            .patient-info p {
+                margin: 5px 0 0;
+                font-size: 14px;
+                color: #6b7280;
+            }
+
+            .view-btn {
+                padding: 8px 16px;
+                background: #3b82f6;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .view-btn:hover {
+                background: #2563eb;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

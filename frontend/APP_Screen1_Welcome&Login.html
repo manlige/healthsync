@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSYNC - Login</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background: #e6f4f1;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 2rem;
+            overflow-x: hidden;
+            width: 100%;
+        }
+
+        .logo-container {
+            text-align: center;
+            margin: 2rem 0;
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .logo {
+            width: min(80px, 20vw);
+            height: min(80px, 20vw);
+            background: #2A9D8F;
+            border-radius: 20px;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            font-weight: 300;
+        }
+
+        .app-name {
+            color: #264653;
+            font-size: clamp(1.8rem, 5vw, 2.5rem);
+            font-weight: 600;
+            margin-top: 1rem;
+        }
+
+        .login-container {
+            background: white;
+            padding: clamp(1rem, 5vw, 2rem);
+            border-radius: 30px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            width: min(100%, 400px);
+            margin: 0 auto;
+        }
+
+        .input-group {
+            margin-bottom: 1rem;
+            position: relative;
+        }
+
+        input {
+            width: 100%;
+            padding: 15px 20px;
+            border: 2px solid #f0f0f0;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            color: #333;
+            transition: all 0.3s ease;
+            background: #f8f8f8;
+        }
+
+        input::placeholder {
+            color: #999;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2A9D8F;
+            background: white;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #2A9D8F;
+        }
+
+        .login-btn {
+            width: 100%;
+            padding: 15px;
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin: 1rem 0;
+        }
+
+        .login-btn:hover {
+            background: #238276;
+        }
+
+        .links {
+            display: flex;
+            justify-content: space-between;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+
+        .links a {
+            color: #2A9D8F;
+            text-decoration: none;
+        }
+
+        .social-login {
+            margin-top: 2rem;
+        }
+
+        .social-btn {
+            width: 100%;
+            padding: 15px;
+            margin: 0.5rem 0;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            color: #333;
+        }
+
+        .social-btn:hover {
+            background: #f8f8f8;
+        }
+
+        .social-btn i {
+            font-size: 1.2rem;
+        }
+
+        .social-btn.google i {
+            color: #DB4437;
+        }
+
+        .social-btn.apple i {
+            color: #000;
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding: 1rem;
+            }
+
+            .links {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+
+            input {
+                padding: 12px 15px;
+                font-size: 1rem;
+            }
+
+            .login-btn, .social-btn {
+                padding: 12px;
+                font-size: 1rem;
+            }
+        }
+
+        .alert {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        .alert-error {
+            background-color: #fee2e2;
+            color: #dc2626;
+            border: 1px solid #fecaca;
+        }
+
+        .alert-success {
+            background-color: #dcfce7;
+            color: #16a34a;
+            border: 1px solid #bbf7d0;
+        }
+
+        .loading {
+            display: none;
+            margin: 0 auto;
+            width: 24px;
+            height: 24px;
+            border: 3px solid #f3f3f3;
+            border-top: 3px solid #2A9D8F;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+        }
+
+        .remember-me input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.5rem;
+        }
+        </style>
+</head>
+<body class="page-transition">
+    <div class="logo-container">
+    <img src="assets/images/HealthSync Logo.jpg" alt="HealthSync Logo" style="width: 100px; height: 100px; object-fit: contain; margin: 0 auto 1rem; border-radius: 10px; display: block;">
+    <h1 class="app-name">HealthSYNC</h1>
+</div>
+
+    <div class="login-container">
+        <div id="alertMessage" class="alert"></div>
+        <form id="loginForm" onsubmit="handleLogin(event)">
+            <div class="input-group">
+                <input type="text" id="username" placeholder="Full Name" required>
+            </div>
+
+            <div class="input-group">
+                <input type="password" id="password" placeholder="Password" required>
+                <span class="password-toggle" onclick="togglePassword('password')">
+                    <i class="fas fa-eye"></i>
+                </span>
+            </div>
+
+            <div class="remember-me">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">Remember me</label>
+            </div>
+
+            <button type="submit" class="login-btn">
+                <span>Log In</span>
+                <div class="loading" id="loginLoading"></div>
+            </button>
+
+            <div class="links">
+                <a href="#">Forgot Password?</a>
+                <a href="#">Don't have an account? Sign Up</a>
+            </div>
+
+            <div class="social-login">
+                <button type="button" class="social-btn google" onclick="socialLogin('google')">
+                    <i class="fab fa-google"></i> Continue with Google
+                </button>
+                <button type="button" class="social-btn apple" onclick="socialLogin('apple')">
+                    <i class="fab fa-apple"></i> Continue with Apple
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://127.0.0.1:5000/api';
+
+        // 显示错误或成功消息
+        function showAlert(message, type = 'error') {
+            const alertEl = document.getElementById('alertMessage');
+            alertEl.textContent = message;
+            alertEl.className = `alert alert-${type}`;
+            alertEl.style.display = 'block';
+
+            setTimeout(() => {
+                alertEl.style.display = 'none';
+            }, 3000);
+        }
+
+        // 切换加载状态
+        function toggleLoading(show) {
+            const loginBtn = document.querySelector('.login-btn span');
+            const loading = document.getElementById('loginLoading');
+            const form = document.getElementById('loginForm');
+            
+            if (show) {
+                loginBtn.style.display = 'none';
+                loading.style.display = 'block';
+                form.style.pointerEvents = 'none';
+            } else {
+                loginBtn.style.display = 'block';
+                loading.style.display = 'none';
+                form.style.pointerEvents = 'auto';
+            }
+        }
+
+        // 切换密码显示/隐藏
+        function togglePassword(fieldId) {
+            const passwordField = document.getElementById(fieldId);
+            const type = passwordField.getAttribute('type');
+            passwordField.setAttribute('type', type === 'password' ? 'text' : 'password');
+        }
+
+        // 处理登录
+        async function handleLogin(event) {
+            event.preventDefault();
+            const name = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const rememberMe = document.getElementById('rememberMe').checked;
+
+            toggleLoading(true);
+            
+            try {
+                // 简化的登录验证
+                if (name && password) {
+                    showAlert('Login successful! Redirecting...', 'success');
+
+                    // 如果选择了"记住我"，保存用户名到本地存储
+                    if (rememberMe) {
+                        localStorage.setItem('rememberedUsername', name);
+                    } else {
+                        localStorage.removeItem('rememberedUsername');
+                    }
+
+                    // 保存用户信息到本地存储
+                    const userInfo = {
+                        name: name,
+                        role: 'user'
+                    };
+                    localStorage.setItem('user', JSON.stringify(userInfo));
+                    
+                    // 统一跳转到仪表板页面
+                    setTimeout(() => {
+                        window.location.href = 'APP_Screen2_User Dashboard(Home Page).html';
+                    }, 1500);
+                } else {
+                    throw new Error('Please enter both name and password');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                showAlert(error.message || 'Login failed. Please try again.');
+            } finally {
+                toggleLoading(false);
+            }
+        }
+
+        // 页面加载时检查是否有保存的用户名
+        window.addEventListener('DOMContentLoaded', () => {
+            const rememberedUsername = localStorage.getItem('rememberedUsername');
+            if (rememberedUsername) {
+                document.getElementById('username').value = rememberedUsername;
+                document.getElementById('rememberMe').checked = true;
+            }
+        });
+
+        function socialLogin(provider) {
+            // Simulate social login
+            setTimeout(() => {
+                window.location.href = 'APP_Screen2_User Dashboard(Home Page).html';
+            }, 1000);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>HealthSYNC - Add Health Data</title>
+<style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f9fb;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-controls {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .back-button {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .save-header-button {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+
+        .save-header-button:hover {
+            opacity: 0.9;
+        }
+
+        /* Form Container */
+        .form-container {
+            padding: 1.5rem;
+            padding-bottom: 120px;
+        }
+
+        .form-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Data Type Selector */
+        .data-type-selector {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .data-type {
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            height: 100px; /* Fixed height for consistency */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .data-type.active {
+            border-color: #2A9D8F;
+            background: #e9f7f5;
+        }
+
+        .data-type.custom {
+            background: #f0f0f0;
+            color: #2A9D8F;
+            font-weight: bold;
+            height: auto; /* Allow custom item to have a different height */
+            padding: 1.5rem; /* Larger padding for emphasis */
+        }
+
+        /* Form Elements */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #264653;
+            font-weight: 500;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2A9D8F;
+        }
+
+        /* Voice-to-text Button */
+        .voice-to-text {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .voice-to-text:hover {
+            opacity: 0.9;
+        }
+
+        /* Save Data Button */
+        .save-data-button {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            transition: opacity 0.3s ease;
+        }
+
+        .save-data-button:hover {
+            opacity: 0.9;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item.active {
+            color: #2A9D8F;
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+    
+            /* 数据类型选择器的响应式布局 */
+            .data-type-selector {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1rem;
+                padding: 1rem;
+                width: 100%;
+            }
+
+            .data-type {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                padding: 1rem;
+                min-height: 60px;
+                word-wrap: break-word;
+                hyphens: auto;
+            }
+
+            @media (max-width: 768px) {
+                .data-type-selector {
+                    grid-template-columns: repeat(2, 1fr);
+                }
+                
+                .data-type {
+                    font-size: 0.9em;
+                    padding: 0.8rem;
+                }
+            }
+
+            @media (max-width: 480px) {
+                .data-type-selector {
+                    grid-template-columns: 1fr;
+                    gap: 0.8rem;
+                }
+                
+                .data-type {
+                    width: 100%;
+                    min-height: 50px;
+                }
+            }
+            </style>
+</head>
+<body>
+<!-- Header -->
+<header class="header">
+<div class="header-controls">
+<div class="back-button" onclick="window.location.href='App_Screen4_1_Health Data.html'">←</div>
+<h2>Log Health Data</h2>
+</div>
+<button class="save-header-button" onclick="saveData()">Save</button>
+</header>
+<!-- Main Content -->
+<main class="form-container">
+<div class="form-card">
+<!-- Data Type Selector -->
+<div class="data-type-selector">
+<!-- First Row -->
+<div class="data-type active" data-type="medical">
+                    🏥 Medical
+                </div>
+<div class="data-type" data-type="symptom" onclick="window.location.href='App_Screen4_3_Health Data.html'">
+                    🤒 Symptom
+                </div>
+<div class="data-type" data-type="diet" onclick="window.location.href='App_Screen4_4_Health Data.html'">
+                    🥗 Diet
+                </div>
+<div class="data-type" data-type="exercise" onclick="window.location.href='App_Screen4_5_Health Data.html'">
+                    🏃 Exercise
+                </div>
+</div>
+<div class="data-type-selector">
+<!-- Second Row -->
+<div class="data-type" data-type="medication" onclick="window.location.href='App_Screen4_6_Health Data.html'">
+                    💊 Medication
+                </div>
+<div class="data-type" data-type="bgm" onclick="window.location.href='App_Screen4_7_Health Data.html'">
+                    🩺 BGM
+                </div>
+<div class="data-type" data-type="weight">
+                    ⚖️ Weight
+                </div>
+<div class="data-type custom" onclick="addCustomItem()">
+                    ➕ Custom Item
+                </div>
+</div>
+<!-- Dynamic Forms -->
+<div class="form-section active" id="medical-form">
+<div class="form-group">
+<label>Condition Name</label>
+<div style="display: flex; gap: 1rem;">
+<input placeholder="e.g., Hypertension" type="text"/>
+<button class="voice-to-text" onclick="startVoiceToText()">
+                            🎤 Voice-to-text
+                        </button>
+</div>
+</div>
+<div class="form-group">
+<label>Diagnosis Date</label>
+<input id="diagnosis-date" type="date" required/>
+</div>
+<div class="form-group">
+<label>Related Documents</label>
+<input type="file"/>
+</div>
+</div>
+<!-- AI Suggestions -->
+<div class="form-group">
+<label>
+<input id="ai-advice" type="checkbox"/> Get AI Recommendations
+                </label>
+</div>
+<!-- Save Data Button -->
+<button class="save-data-button" onclick="saveData()">Save Data</button>
+</div>
+</main>
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+<div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+<div class="nav-item" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+<div class="nav-item active" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+<div class="health-data-icon"></div>
+</div>
+<div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+<div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+</nav>
+<script>
+        const API_BASE_URL = 'http://127.0.0.1:5000/api';
+
+        // 检查用户是否已登录
+        function checkAuth() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (!user) {
+                window.location.href = 'APP_Screen1_Welcome&Login.html';
+                return false;
+            }
+            return true;
+        }
+
+        // 页面加载时检查登录状态
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!checkAuth()) return;
+            loadCustomItems();
+            
+            // 设置日期输入框的默认值为今天
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('diagnosis-date').value = today;
+        });
+
+        // 加载自定义项目
+        function loadCustomItems() {
+            const customItems = JSON.parse(localStorage.getItem('customMedicalItems') || '[]');
+            const selects = document.querySelectorAll('.customizable-select');
+            selects.forEach(select => {
+                customItems.forEach(item => {
+                    if (![...select.options].some(opt => opt.value === item.toLowerCase())) {
+                        const option = new Option(item, item.toLowerCase());
+                        option.classList.add('custom-medical-option');
+                        select.insertBefore(option, select.lastElementChild);
+                    }
+                });
+            });
+        }
+
+        // Data Type Selection
+        function selectDataType(element, type) {
+            document.querySelectorAll('.data-type, .form-section').forEach(el => {
+                el.classList.remove('active');
+            });
+            element.classList.add('active');
+            document.getElementById(`${type}-form`).classList.add('active');
+        }
+
+        // Voice-to-text Functionality
+        function startVoiceToText() {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert('Your browser does not support voice-to-text. Please use Chrome or Edge.');
+                return;
+            }
+
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.start();
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                const conditionNameInput = document.querySelector('#medical-form input[type="text"]');
+                conditionNameInput.value = transcript;
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Voice recognition error:', event.error);
+                alert('Error occurred in voice recognition. Please try again.');
+            };
+        }
+
+        // Add Custom Item
+        function addCustomItem() {
+            const customItem = prompt('Enter the name of your custom medical condition:');
+            if (customItem) {
+                // 保存自定义项目到本地存储
+                const customItems = JSON.parse(localStorage.getItem('customMedicalItems') || '[]');
+                if (!customItems.includes(customItem)) {
+                    customItems.push(customItem);
+                    localStorage.setItem('customMedicalItems', JSON.stringify(customItems));
+                    
+                    // 添加到所有下拉列表
+                    const selects = document.querySelectorAll('.customizable-select');
+                    selects.forEach(select => {
+                        if (![...select.options].some(opt => opt.value === customItem.toLowerCase())) {
+                            const option = new Option(customItem, customItem.toLowerCase());
+                            option.classList.add('custom-medical-option');
+                            select.insertBefore(option, select.lastElementChild);
+                        }
+                    });
+                }
+                alert(`Custom medical condition "${customItem}" added!`);
+            }
+        }
+
+        // Save Data
+        async function saveData() {
+            if (!checkAuth()) return;
+
+            // 显示加载状态
+            document.querySelector('.loading').classList.add('active');
+
+            try {
+                const user = JSON.parse(localStorage.getItem('user'));
+                const conditionName = document.querySelector('#medical-form input[type="text"]').value;
+                const diagnosisDate = document.getElementById('diagnosis-date').value;
+                const fileInput = document.querySelector('input[type="file"]');
+                const aiAdvice = document.getElementById('ai-advice').checked;
+
+                if (!conditionName || !diagnosisDate) {
+                    alert('Please fill in all required fields');
+                    return;
+                }
+
+                // 创建新的健康数据记录
+                const newRecord = {
+                    id: Date.now(),
+                    userId: user.id,
+                    dataType: 'medical',
+                    conditionName: conditionName,
+                    date: diagnosisDate,
+                    time: new Date().toLocaleTimeString(),
+                    value: conditionName,
+                    aiAdvice: aiAdvice,
+                    createdAt: new Date().toISOString()
+                };
+
+                // 尝试保存到服务器
+                try {
+                    const formData = new FormData();
+                    formData.append('userId', user.id);
+                    formData.append('dataType', 'medical');
+                    formData.append('conditionName', conditionName);
+                    formData.append('date', diagnosisDate);
+                    formData.append('time', new Date().toLocaleTimeString());
+                    formData.append('value', conditionName);
+                    
+                    if (fileInput.files.length > 0) {
+                        formData.append('document', fileInput.files[0]);
+                    }
+                    
+                    formData.append('aiAdvice', aiAdvice);
+
+                    const response = await fetch(`${API_BASE_URL}/health-data`, {
+                        method: 'POST',
+                        body: formData
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Server error');
+                    }
+
+                    const result = await response.json();
+                    if (result.aiRecommendations) {
+                        showAiRecommendations(result.aiRecommendations);
+                    } else {
+                        alert('Medical data saved successfully!');
+                        window.location.href = 'App_Screen4_1_Health Data.html';
+                    }
+                } catch (serverError) {
+                    console.warn('Server save failed, falling back to local storage:', serverError);
+                    
+                    // 如果服务器保存失败，使用本地存储
+                    let healthData = JSON.parse(localStorage.getItem('healthData') || '[]');
+                    healthData.push(newRecord);
+                    localStorage.setItem('healthData', JSON.stringify(healthData));
+
+                    if (aiAdvice) {
+                        const recommendations = [{
+                            title: 'Medical Condition Management',
+                            description: `Based on your condition "${conditionName}", consider regular check-ups and monitoring.`
+                        }];
+                        showAiRecommendations(recommendations);
+                    } else {
+                        alert('Medical data saved successfully to local storage!');
+                        window.location.href = 'App_Screen4_1_Health Data.html';
+                    }
+                }
+            } catch (error) {
+                console.error('Error saving medical data:', error);
+                alert('Failed to save medical data. Please try again later.');
+            } finally {
+                // 隐藏加载状态
+                document.querySelector('.loading').classList.remove('active');
+            }
+        }
+
+        // 显示 AI 建议
+        function showAiRecommendations(recommendations) {
+            const recommendationsHtml = recommendations.map(rec => 
+                `<div class="recommendation">
+                    <h3>${rec.title}</h3>
+                    <p>${rec.description}</p>
+                </div>`
+            ).join('');
+
+            const modal = document.createElement('div');
+            modal.className = 'ai-recommendations-modal';
+            modal.innerHTML = `
+                <div class="modal-content">
+                    <h2>AI Recommendations</h2>
+                    <div class="recommendations-container">
+                        ${recommendationsHtml}
+                    </div>
+                    <button onclick="this.parentElement.parentElement.remove(); window.location.href='App_Screen4_1_Health Data.html';">Close</button>
+                </div>
+            `;
+
+            document.body.appendChild(modal);
+        }
+
+        // Navigation Handling
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+    <style>
+        /* AI Recommendations Modal Styles */
+        .ai-recommendations-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            max-width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+
+        .recommendation {
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background: #f5f9fb;
+            border-radius: 10px;
+        }
+
+        .recommendation h3 {
+            color: #2A9D8F;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal-content button {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        /* Loading Indicator */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading.active {
+            display: flex;
+        }
+    </style>
+    <!-- Loading Indicator -->
+    <div class="loading">
+        <div>Saving data...</div>
+    </div>
+</body>
+</html>
