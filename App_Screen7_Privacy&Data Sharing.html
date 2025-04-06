@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSYNC - Privacy & Data Sharing</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f9fb;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .save-btn {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: opacity 0.3s ease;
+        }
+
+        .save-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 1.5rem;
+            padding-bottom: 150px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+        }
+
+        /* Description */
+        .description {
+            margin: 1rem 0;
+            color: #666;
+        }
+
+        .description a {
+            text-decoration: underline;
+            color: #2A9D8F;
+        }
+
+        /* Checkbox Style */
+        .checkbox {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .checkbox input {
+            width: 16px;
+            height: 16px;
+            cursor: pointer;
+        }
+
+        /* Data Sharing Settings */
+        .data-sharing-settings {
+            margin-top: 2rem;
+        }
+
+        .data-sharing-settings h3 {
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .data-sharing-settings h4 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .data-sharing-settings p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .data-sharing-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .data-sharing-item button {
+            background: #e76f51;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .data-sharing-item button:hover {
+            opacity: 0.9;
+        }
+
+        .new-sharing-btn {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-top: 1rem;
+        }
+
+        .new-sharing-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Connected Apps & Services */
+        .connected-apps {
+            margin: 25px 0;
+        }
+
+        .app-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+
+        .app-status {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .status-connected {
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        /* Data Sharing History */
+        .access-log {
+            margin: 25px 0;
+        }
+
+        .log-entry {
+            display: grid;
+            grid-template-columns: 30px 1fr;
+            gap: 15px;
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Icons */
+        .icon {
+            font-size: 1.2rem;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+        }
+
+        .nav-item.active {
+            color: #2A9D8F;
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-left">
+            <button class="back-button" onclick="window.location.href='App_Screen6_My Profiles.html'">←</button>
+            <h2>Privacy & Data Sharing</h2>
+        </div>
+        <button class="save-btn" onclick="saveSettings()">Save</button>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Description -->
+        <div class="card">
+            <div class="description">
+                Manage how your health data is stored, shared, and accessed. <a href="#">privacy policy</a>
+            </div>
+
+            <!-- Anonymous Data Contribution -->
+            <div class="data-sharing-item">
+                <span>Anonymous Data Contribution</span>
+                <div class="checkbox">
+                    <input type="checkbox" id="anonymous-data">
+                </div>
+            </div>
+        </div>
+
+        <!-- Data Sharing Settings -->
+        <div class="card data-sharing-settings">
+            <h3><span class="icon">🔒</span> Data Sharing Settings</h3>
+            <h4><span class="icon">👤</span> Who can Access My Data?</h4>
+            <p>Control who can access your health data and manage connected apps and services.</p>
+
+            <!-- Dr. Smith -->
+            <div class="data-sharing-item">
+                <span>Dr. Smith</span>
+                <button onclick="revokeAccess('Dr. Smith')">Revoke</button>
+            </div>
+
+            <!-- New Sharing Button -->
+            <button class="new-sharing-btn" onclick="newSharing()">+ New Sharing</button>
+
+            <!-- Connected Apps & Services -->
+            <div class="connected-apps">
+                <h4><span class="icon">📱</span> Connected Apps & Services</h4>
+                <div class="app-card">
+                    <div class="app-status">
+                        <span>✅</span>
+                        <div>
+                            <strong>Apple Health</strong>
+                            <div class="status-connected">Connected</div>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="managePermissions('Apple Health')">Manage Permissions</button>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-status">
+                        <span>✅</span>
+                        <div>
+                            <strong>Google Fit</strong>
+                            <div class="status-connected">Connected</div>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="managePermissions('Google Fit')">Manage Permissions</button>
+                </div>
+
+                <div class="app-card">
+                    <div class="app-status">
+                        <span>⬜</span>
+                        <div>
+                            <strong>Fitbit</strong>
+                            <div>Not Connected</div>
+                        </div>
+                    </div>
+                    <button class="btn" onclick="connectApp('Fitbit')">Connect</button>
+                </div>
+
+                <button class="btn" onclick="window.location.href='App_Screen8_My Profile.html'">➕ Add New App</button>
+            </div>
+
+            <!-- Data Sharing History -->
+            <div class="access-log">
+                <h4><span class="icon">📜</span> Data Sharing History</h4>
+                <div class="log-entry">
+                    <span>🏥</span>
+                    <div>
+                        <strong>Dr. Smith (Local Clinic)</strong>
+                        <div>Viewed Blood Sugar Report - March 10, 2025 10:15 AM</div>
+                    </div>
+                </div>
+
+                <div class="log-entry">
+                    <span>📊</span>
+                    <div>
+                        <strong>Google Fit</strong>
+                        <div>Synced Steps & Heart Rate - March 9, 2025</div>
+                    </div>
+                </div>
+
+                <button class="btn" onclick="viewFullHistory()">🔍 View Full History</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+            <div class="health-data-icon"></div>
+        </div>
+        <div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+    </nav>
+
+    <script>
+        const API_BASE_URL = 'http://127.0.0.1:5000/api';
+        let privacySettings = {};
+        let connectedApps = [];
+        let dataSharingHistory = [];
+
+        // 页面加载时获取数据
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadPrivacySettings();
+            await loadConnectedApps();
+            await loadDataSharingHistory();
+        });
+
+        // 加载隐私设置
+        async function loadPrivacySettings() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/privacy-settings`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load privacy settings');
+                }
+
+                privacySettings = await response.json();
+                
+                // 更新UI
+                document.getElementById('anonymous-data').checked = privacySettings.anonymousDataContribution || false;
+            } catch (error) {
+                console.error('Error loading privacy settings:', error);
+                showAlert('Failed to load privacy settings', 'error');
+            }
+        }
+
+        // 加载已连接的应用
+        async function loadConnectedApps() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/connected-apps`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load connected apps');
+                }
+
+                connectedApps = await response.json();
+                displayConnectedApps();
+            } catch (error) {
+                console.error('Error loading connected apps:', error);
+                showAlert('Failed to load connected apps', 'error');
+            }
+        }
+
+        // 显示已连接的应用
+        function displayConnectedApps() {
+            const connectedAppsContainer = document.querySelector('.connected-apps');
+            const appsList = connectedAppsContainer.querySelector('.app-card').parentNode;
+            
+            // 保留第一个应用卡片作为模板
+            const templateCard = appsList.querySelector('.app-card');
+            appsList.innerHTML = '';
+            
+            connectedApps.forEach(app => {
+                const appCard = templateCard.cloneNode(true);
+                
+                // 更新应用信息
+                const appStatus = appCard.querySelector('.app-status');
+                appStatus.querySelector('strong').textContent = app.name;
+                
+                const statusText = appStatus.querySelector('div:last-child');
+                if (app.connected) {
+                    statusText.className = 'status-connected';
+                    statusText.textContent = 'Connected';
+                    appCard.querySelector('button').textContent = 'Manage Permissions';
+                    appCard.querySelector('button').onclick = () => managePermissions(app.id);
+                } else {
+                    statusText.className = '';
+                    statusText.textContent = 'Not Connected';
+                    appCard.querySelector('button').textContent = 'Connect';
+                    appCard.querySelector('button').onclick = () => connectApp(app.id);
+                }
+                
+                appsList.appendChild(appCard);
+            });
+            
+            // 添加"添加新应用"按钮
+            const addNewAppBtn = document.createElement('button');
+            addNewAppBtn.className = 'btn';
+            addNewAppBtn.textContent = '➕ Add New App';
+            addNewAppBtn.onclick = () => window.location.href = 'App_Screen8_My Profile.html';
+            appsList.appendChild(addNewAppBtn);
+        }
+
+        // 加载数据共享历史
+        async function loadDataSharingHistory() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/data-sharing-history`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load data sharing history');
+                }
+
+                dataSharingHistory = await response.json();
+                displayDataSharingHistory();
+            } catch (error) {
+                console.error('Error loading data sharing history:', error);
+                showAlert('Failed to load data sharing history', 'error');
+            }
+        }
+
+        // 显示数据共享历史
+        function displayDataSharingHistory() {
+            const accessLog = document.querySelector('.access-log');
+            const logEntries = accessLog.querySelectorAll('.log-entry');
+            
+            // 清空现有条目
+            logEntries.forEach(entry => entry.remove());
+            
+            // 添加历史条目
+            dataSharingHistory.forEach(entry => {
+                const logEntry = document.createElement('div');
+                logEntry.className = 'log-entry';
+                
+                logEntry.innerHTML = `
+                    <span>${entry.icon}</span>
+                    <div>
+                        <strong>${entry.actor}</strong>
+                        <div>${entry.action} - ${new Date(entry.timestamp).toLocaleString()}</div>
+                    </div>
+                `;
+                
+                accessLog.insertBefore(logEntry, accessLog.querySelector('button'));
+            });
+        }
+
+        // 保存设置
+        async function saveSettings() {
+            try {
+                const anonymousData = document.getElementById('anonymous-data').checked;
+                
+                const response = await fetch(`${API_BASE_URL}/privacy-settings`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        anonymousDataContribution: anonymousData
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to save privacy settings');
+                }
+
+                showAlert('Settings saved successfully', 'success');
+            } catch (error) {
+                console.error('Error saving privacy settings:', error);
+                showAlert('Failed to save settings', 'error');
+            }
+        }
+
+        // 撤销访问权限
+        async function revokeAccess(name) {
+            if(confirm(`Are you sure you want to revoke access for ${name}?`)) {
+                try {
+                    const response = await fetch(`${API_BASE_URL}/data-sharing/${name}`, {
+                        method: 'DELETE',
+                        credentials: 'include'
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Failed to revoke access');
+                    }
+
+                    showAlert(`Access revoked for ${name}`, 'success');
+                    loadDataSharingHistory(); // 重新加载历史记录
+                } catch (error) {
+                    console.error('Error revoking access:', error);
+                    showAlert('Failed to revoke access', 'error');
+                }
+            }
+        }
+
+        // 新共享
+        function newSharing() {
+            // 这里可以实现添加新共享的逻辑
+            alert('Add new sharing...');
+        }
+
+        // 管理权限
+        async function managePermissions(appId) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/connected-apps/${appId}/permissions`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load app permissions');
+                }
+
+                const permissions = await response.json();
+                
+                // 这里可以实现显示和管理权限的UI
+                alert(`Manage permissions for app ID: ${appId}`);
+            } catch (error) {
+                console.error('Error managing permissions:', error);
+                showAlert('Failed to manage permissions', 'error');
+            }
+        }
+
+        // 连接应用
+        async function connectApp(appId) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/connected-apps/${appId}/connect`, {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to connect app');
+                }
+
+                showAlert('App connected successfully', 'success');
+                loadConnectedApps(); // 重新加载已连接的应用
+            } catch (error) {
+                console.error('Error connecting app:', error);
+                showAlert('Failed to connect app', 'error');
+            }
+        }
+
+        // 查看完整历史
+        function viewFullHistory() {
+            // 这里可以实现查看完整历史的逻辑
+            alert('View full history...');
+        }
+
+        // 显示提示信息
+        function showAlert(message, type = 'info') {
+            // 创建提示元素
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert ${type}`;
+            alertDiv.textContent = message;
+            
+            // 添加到页面
+            document.body.appendChild(alertDiv);
+            
+            // 3秒后移除
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 3000);
+        }
+
+        // 添加提示样式
+        const style = document.createElement('style');
+        style.textContent = `
+            .alert {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                color: white;
+                z-index: 1000;
+                animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+            }
+            
+            .alert.success {
+                background-color: #10b981;
+            }
+            
+            .alert.error {
+                background-color: #ef4444;
+            }
+            
+            .alert.info {
+                background-color: #3b82f6;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Navigation Handling
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>

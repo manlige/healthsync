@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connection Successful</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f9fb;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            width: 100%;
+            position: fixed;
+            top: 0;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .back-button {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2A9D8F;
+        }
+
+        /* Success Container */
+        .success-container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            text-align: center;
+            max-width: 500px;
+            width: 90%;
+            margin-top: 80px; /* Offset for fixed header */
+            margin-bottom: 80px; /* Offset for bottom navigation */
+        }
+
+        /* Success Icon Animation */
+        .success-icon {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .success-icon-circle {
+            width: 100px;
+            height: 100px;
+            border: 6px solid #2A9D8F;
+            border-radius: 50%;
+            position: absolute;
+        }
+
+        .checkmark {
+            stroke: #2A9D8F;
+            stroke-width: 6;
+            stroke-linecap: round;
+            animation: draw 1.2s ease-out forwards;
+        }
+
+        @keyframes draw {
+            0% { stroke-dasharray: 0, 100; }
+            100% { stroke-dasharray: 100, 0; }
+        }
+
+        /* Device Info Card */
+        .device-card {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 20px;
+            margin: 25px 0;
+            text-align: left;
+        }
+
+        .device-info {
+            display: grid;
+            grid-template-columns: 60px 1fr;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .device-icon {
+            width: 60px;
+            height: 60px;
+            background: #e3f2fd;
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            color: #2A9D8F;
+        }
+
+        /* Auto-Sync Checkbox */
+        .sync-checkbox {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .sync-checkbox input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: grid;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            padding: 16px 24px;
+            border-radius: 12px;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: transform 0.2s, opacity 0.2s;
+        }
+
+        .btn-primary {
+            background: #2A9D8F;
+            color: white;
+        }
+
+        .btn-secondary {
+            background: #007AFF;
+            color: white;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.9;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        .nav-item.active {
+            color: #2A9D8F;
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with back button -->
+    <header class="header">
+        <div class="header-left">
+            <button class="back-button" onclick="window.location.href='App_Screen8_My Profile.html'">←</button>
+            <h2>Connect New Device</h2>
+        </div>
+    </header>
+
+    <!-- Success Container -->
+    <div class="success-container">
+        <!-- Success Icon with Circle -->
+        <div class="success-icon">
+            <div class="success-icon-circle"></div>
+            <svg viewBox="0 0 52 52">
+                <path class="checkmark" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+            </svg>
+        </div>
+
+        <h1>Connection Successful! 🎉</h1>
+        <p class="subtitle">Your device is now ready to sync health data</p>
+
+        <!-- Device Info Card -->
+        <div class="device-card">
+            <div class="device-info">
+                <div class="device-icon">
+                    <i class="fas fa-clock"></i> <!-- Font Awesome watch icon -->
+                </div>
+                <div>
+                    <h3>Apple Watch Series 8</h3>
+                    <p>Last synced: Just now</p>
+                    <p>Battery: 85% 🔋</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Auto-Sync Checkbox -->
+        <div class="sync-checkbox">
+            <input type="checkbox" id="autoSyncCheckbox" checked>
+            <label for="autoSyncCheckbox">Auto-sync enabled</label>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="btn btn-primary" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">
+                Go to Dashboard
+            </button>
+            <button class="btn btn-secondary" onclick="window.location.href='App_Screen6_My Profiles.html'">
+                Manage Devices
+            </button>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+            <div class="health-data-icon"></div>
+        </div>
+        <div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+    </nav>
+
+    <script>
+        const API_BASE_URL = 'http://127.0.0.1:5000/api';
+        let deviceInfo = {};
+        let autoSyncEnabled = true;
+
+        // 页面加载时获取设备信息
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadDeviceInfo();
+            
+            // 设置自动同步复选框的初始状态
+            document.getElementById('autoSyncCheckbox').checked = autoSyncEnabled;
+        });
+
+        // 加载设备信息
+        async function loadDeviceInfo() {
+            try {
+                // 从URL获取设备ID
+                const urlParams = new URLSearchParams(window.location.search);
+                const deviceId = urlParams.get('deviceId');
+                
+                if (!deviceId) {
+                    throw new Error('Device ID not found in URL');
+                }
+                
+                const response = await fetch(`${API_BASE_URL}/devices/${deviceId}`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load device info');
+                }
+
+                deviceInfo = await response.json();
+                displayDeviceInfo();
+            } catch (error) {
+                console.error('Error loading device info:', error);
+                showAlert('Failed to load device info', 'error');
+            }
+        }
+
+        // 显示设备信息
+        function displayDeviceInfo() {
+            const deviceName = document.querySelector('.device-info h3');
+            const lastSynced = document.querySelector('.device-info p:nth-child(2)');
+            const batteryLevel = document.querySelector('.device-info p:nth-child(3)');
+            
+            deviceName.textContent = deviceInfo.name || 'Connected Device';
+            lastSynced.textContent = `Last synced: ${deviceInfo.lastSynced ? new Date(deviceInfo.lastSynced).toLocaleString() : 'Just now'}`;
+            batteryLevel.textContent = `Battery: ${deviceInfo.batteryLevel || '85%'} 🔋`;
+            
+            // 更新设备图标
+            const deviceIcon = document.querySelector('.device-icon i');
+            if (deviceInfo.icon) {
+                deviceIcon.className = deviceInfo.icon;
+            }
+        }
+
+        // Auto-Sync Checkbox
+        const autoSyncCheckbox = document.getElementById('autoSyncCheckbox');
+        autoSyncCheckbox.addEventListener('change', async function() {
+            autoSyncEnabled = this.checked;
+            const status = this.checked ? 'enabled' : 'disabled';
+            
+            try {
+                // 从URL获取设备ID
+                const urlParams = new URLSearchParams(window.location.search);
+                const deviceId = urlParams.get('deviceId');
+                
+                if (!deviceId) {
+                    throw new Error('Device ID not found in URL');
+                }
+                
+                const response = await fetch(`${API_BASE_URL}/devices/${deviceId}/auto-sync`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        enabled: autoSyncEnabled
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to update auto-sync settings');
+                }
+
+                showAlert(`Auto-sync is now ${status}`, 'success');
+            } catch (error) {
+                console.error('Error updating auto-sync settings:', error);
+                showAlert('Failed to update auto-sync settings', 'error');
+                
+                // 恢复复选框状态
+                this.checked = !this.checked;
+                autoSyncEnabled = this.checked;
+            }
+        });
+
+        // 显示提示信息
+        function showAlert(message, type = 'info') {
+            // 创建提示元素
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert ${type}`;
+            alertDiv.textContent = message;
+            
+            // 添加到页面
+            document.body.appendChild(alertDiv);
+            
+            // 3秒后移除
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 3000);
+        }
+
+        // 添加提示样式
+        const style = document.createElement('style');
+        style.textContent = `
+            .alert {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                color: white;
+                z-index: 1000;
+                animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+            }
+            
+            .alert.success {
+                background-color: #10b981;
+            }
+            
+            .alert.error {
+                background-color: #ef4444;
+            }
+            
+            .alert.info {
+                background-color: #3b82f6;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(-20px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

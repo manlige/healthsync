@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HealthSYNC - Appointments</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background: #f5f9fb;
+            min-height: 100vh;
+        }
+
+        /* Header */
+        .header {
+            display: flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            cursor: pointer;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 1.5rem;
+            padding-bottom: 80px;
+        }
+
+        .appointment-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+            position: relative;
+        }
+
+        .appointment-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .doctor-name {
+            font-weight: bold;
+            color: #264653;
+            font-size: 1.1rem;
+        }
+
+        .appointment-time {
+            color: #2A9D8F;
+            font-weight: 500;
+        }
+
+        .appointment-details {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .status-tag {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+        }
+
+        .status-confirmed {
+            background: #e9f7f5;
+            color: #2A9D8F;
+        }
+
+        .status-pending {
+            background: #fff3e0;
+            color: #ff9800;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .edit-button {
+            color: #2A9D8F;
+            cursor: pointer;
+        }
+
+        .cancel-button {
+            color: #e76f51;
+            cursor: pointer;
+        }
+
+        /* FAB */
+        .fab {
+            position: fixed;
+            bottom: 90px;
+            right: 20px;
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background: #2A9D8F;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            cursor: pointer;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .nav-item.active {
+            color: #2A9D8F;
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+
+        /* Loading Indicator */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.8);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="back-button" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">←</div>
+        <h2>Appointments</h2>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" id="appointmentList">
+        <!-- Appointments will be loaded here -->
+        <div class="appointment-card">
+            <div class="appointment-header">
+                <div class="doctor-name">Loading...</div>
+                <div class="status-tag status-pending">Loading</div>
+            </div>
+            <div class="appointment-time">Loading...</div>
+            <div class="appointment-details">
+                <div>Loading...</div>
+                <div>Loading...</div>
+            </div>
+            <div class="action-buttons">
+                <div class="edit-button">✏️ Edit</div>
+                <div class="cancel-button">🗑️ Cancel</div>
+            </div>
+        </div>
+    </main>
+
+    <!-- FAB -->
+    <div class="fab" onclick="window.location.href='App_Screen3_2_Appointment.html'">+</div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+        <div class="nav-item active" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+            <div class="health-data-icon"></div>
+        </div>
+        <div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+        <div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+    </nav>
+
+    <script>
+        const API_BASE_URL = 'http://127.0.0.1:5000/api';
+
+        // 检查用户是否已登录
+        function checkAuth() {
+            const user = JSON.parse(localStorage.getItem('user'));
+            if (!user) {
+                window.location.href = 'APP_Screen1_Welcome&Login.html';
+                return false;
+            }
+            return true;
+        }
+
+        // 页面加载时检查登录状态
+        document.addEventListener('DOMContentLoaded', function() {
+            if (!checkAuth()) return;
+            loadAppointments();
+        });
+
+        // 加载预约列表
+        async function loadAppointments() {
+            // 显示加载状态
+            const loadingIndicator = document.createElement('div');
+            loadingIndicator.className = 'loading';
+            loadingIndicator.innerHTML = '<div>Loading appointments...</div>';
+            document.body.appendChild(loadingIndicator);
+            loadingIndicator.style.display = 'flex';
+
+            try {
+                // 尝试从服务器加载预约
+                try {
+                    const response = await fetch(`${API_BASE_URL}/appointments`, {
+                        credentials: 'include'
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Server error');
+                    }
+
+                    const appointments = await response.json();
+                    displayAppointments(appointments);
+                } catch (serverError) {
+                    console.warn('Server load failed, falling back to local storage:', serverError);
+                    
+                    // 如果服务器加载失败，从本地存储加载
+                    const appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+                    displayAppointments(appointments);
+                }
+            } catch (error) {
+                console.error('Failed to load appointments:', error);
+                alert('Failed to load appointments. Please try again later.');
+            } finally {
+                // 隐藏加载状态
+                loadingIndicator.remove();
+            }
+        }
+
+        // 显示预约列表
+        function displayAppointments(appointments) {
+            const appointmentsList = document.getElementById('appointmentList');
+            appointmentsList.innerHTML = '';
+
+            if (appointments.length === 0) {
+                appointmentsList.innerHTML = '<div class="no-appointments">No appointments found</div>';
+                return;
+            }
+
+            // 按日期排序预约
+            appointments.sort((a, b) => new Date(a.appointment_time) - new Date(b.appointment_time));
+
+            appointments.forEach(appointment => {
+                const appointmentDate = new Date(appointment.appointment_time);
+                const formattedDate = appointmentDate.toLocaleDateString();
+                const formattedTime = appointmentDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+
+                const appointmentElement = document.createElement('div');
+                appointmentElement.className = 'appointment-card';
+                appointmentElement.innerHTML = `
+                    <div class="appointment-header">
+                        <div class="doctor-name">${appointment.doctor_name}</div>
+                        <div class="status-tag status-${appointment.status.toLowerCase()}">${appointment.status}</div>
+                    </div>
+                    <div class="appointment-time">${formattedDate} · ${formattedTime}</div>
+                    <div class="appointment-details">
+                        <div>${appointment.appointment_type}</div>
+                        <div>${appointment.location}</div>
+                    </div>
+                    <div class="action-buttons">
+                        <div class="edit-button" onclick="editAppointment(${appointment.id})">✏️ Edit</div>
+                        <div class="cancel-button" onclick="cancelAppointment(${appointment.id})">🗑️ Cancel</div>
+                    </div>
+                `;
+                appointmentsList.appendChild(appointmentElement);
+            });
+        }
+
+        // 编辑预约
+        function editAppointment(appointmentId) {
+            window.location.href = `App_Screen3_2_Appointment.html?id=${appointmentId}`;
+        }
+
+        // 取消预约
+        async function cancelAppointment(appointmentId) {
+            if (!confirm('Are you sure you want to cancel this appointment?')) {
+                return;
+            }
+
+            // 显示加载状态
+            const loadingIndicator = document.createElement('div');
+            loadingIndicator.className = 'loading';
+            loadingIndicator.innerHTML = '<div>Cancelling appointment...</div>';
+            document.body.appendChild(loadingIndicator);
+            loadingIndicator.style.display = 'flex';
+
+            try {
+                // 尝试从服务器取消预约
+                try {
+                    const response = await fetch(`${API_BASE_URL}/appointments/${appointmentId}`, {
+                        method: 'DELETE',
+                        credentials: 'include'
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Server error');
+                    }
+
+                    alert('Appointment cancelled successfully!');
+                    loadAppointments();
+                } catch (serverError) {
+                    console.warn('Server cancel failed, falling back to local storage:', serverError);
+                    
+                    // 如果服务器取消失败，从本地存储中移除
+                    let appointments = JSON.parse(localStorage.getItem('appointments') || '[]');
+                    appointments = appointments.filter(app => app.id != appointmentId);
+                    localStorage.setItem('appointments', JSON.stringify(appointments));
+                    
+                    alert('Appointment cancelled successfully in local storage!');
+                    loadAppointments();
+                }
+            } catch (error) {
+                console.error('Failed to cancel appointment:', error);
+                alert('Failed to cancel appointment. Please try again later.');
+            } finally {
+                // 隐藏加载状态
+                loadingIndicator.remove();
+            }
+        }
+
+        // 保留原有的导航处理
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.querySelector('.nav-item.active').classList.remove('active');
+                this.classList.add('active');
+            });
+        });
+
+        // 保存预约
+        async function saveAppointment(event) {
+            event.preventDefault();
+            if (!checkAuth()) return;
+
+            const form = event.target;
+            const user = JSON.parse(localStorage.getItem('user'));
+            
+            const formData = new FormData();
+            formData.append('userId', user.id);
+            formData.append('doctorId', form.doctor.value);
+            formData.append('date', form.date.value);
+            formData.append('time', form.time.value);
+            formData.append('type', form.type.value);
+            formData.append('notes', form.notes.value);
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/appointments`, {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to save appointment');
+                }
+
+                const result = await response.json();
+                alert('Appointment scheduled successfully!');
+                loadAppointments();  // 重新加载预约列表
+                form.reset();
+            } catch (error) {
+                console.error('Error saving appointment:', error);
+                alert('Failed to schedule appointment. Please try again later.');
+            }
+        }
+
+        // Voice-to-text for notes
+        function startVoiceToText(targetId) {
+            if (!('webkitSpeechRecognition' in window)) {
+                alert('Your browser does not support voice-to-text. Please use Chrome or Edge.');
+                return;
+            }
+
+            const recognition = new webkitSpeechRecognition();
+            recognition.lang = 'en-US';
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.start();
+
+            recognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                document.getElementById(targetId).value = transcript;
+            };
+
+            recognition.onerror = function(event) {
+                console.error('Voice recognition error:', event.error);
+                alert('Error occurred in voice recognition. Please try again.');
+            };
+        }
+    </script>
+</body>
+</html>

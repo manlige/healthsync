@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Client Profile Management</title>
+<style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 1rem;
+            }
+            
+            input, button {
+                font-size: 16px !important;
+            }
+        }
+        
+        /* Base Styles */
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8fafc;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            padding: 2rem;
+            margin-bottom: 80px; /* Add space for bottom navigation */
+        }
+
+        /* Profile Switching */
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .back-arrow {
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 1.5rem;
+        }
+
+        .switch-profile-btn {
+            background-color: #10b981; /* Green color */
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .switch-profile-btn:hover {
+            background-color: #0d9f6e; /* Darker green on hover */
+        }
+
+        .client-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .client-card {
+            padding: 1.5rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .client-card.active {
+            border-color: #10b981; /* Green border */
+            background: #f0fdf4; /* Light green background */
+        }
+
+        /* Data Dashboard */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .metric-card {
+            padding: 1.5rem;
+            background: #f8fafc;
+            border-radius: 8px;
+        }
+
+        .ai-insight {
+            background: #f0fdf4;
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Plan Adjustment */
+        .plan-form {
+            display: grid;
+            gap: 1.5rem;
+            border-top: 2px solid #e2e8f0;
+            padding-top: 2rem;
+        }
+
+        .update-button {
+            background-color: #10b981; /* Green color */
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .update-button:hover {
+            background-color: #0d9f6e; /* Darker green on hover */
+        }
+
+        .status-message {
+            padding: 1rem;
+            border-radius: 8px;
+            margin-top: 1rem;
+            display: none;
+        }
+
+        /* Bottom Navigation */
+        .bottom-nav {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: space-around;
+            background: white;
+            padding: 1rem 0;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-item {
+            text-align: center;
+            color: #888;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            font-size: 1.5rem;
+        }
+
+        .nav-item.active {
+            color: #3b82f6;
+        }
+
+        /* Bottom Navigation Icons */
+        .bottom-nav .nav-item {
+            color: #808080;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Health Data Icon specific style */
+        .health-data-icon {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23FF0000' d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E");
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .nav-item.active .health-data-icon {
+            transform: scale(1.1);
+            transition: transform 0.2s ease;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<!-- Profile Switching -->
+<div class="profile-header">
+<div class="back-arrow" onclick="window.location.href='App_Screen6_My Profiles.html'">←</div>
+<h1>Switch Profile</h1>
+</div>
+<!-- Other Profiles Section -->
+<div class="section-header">
+<h2>Other Profiles</h2>
+<button class="switch-profile-btn" onclick="window.location.href='App_Screen6_My Profiles.html'">Switch Profile</button>
+</div>
+<div class="client-grid">
+<div class="client-card active" data-client="client1">
+<h3>John Doe</h3>
+<p>Last active: 2h ago</p>
+</div>
+<div class="client-card" data-client="client2">
+<h3>Sarah Smith</h3>
+<p>Last active: 1d ago</p>
+</div>
+</div>
+<!-- Client Data -->
+<div class="metrics-grid">
+<div class="metric-card">
+<h4>Workouts (7d)</h4>
+<p class="metric-value">5 sessions</p>
+</div>
+<div class="metric-card">
+<h4>Calories Burned</h4>
+<p class="metric-value">3,200 kcal</p>
+</div>
+<div class="metric-card">
+<h4>Avg Heart Rate</h4>
+<p class="metric-value">142 bpm</p>
+</div>
+<div class="metric-card">
+<h4>Recovery Score</h4>
+<p class="metric-value">68/100</p>
+</div>
+</div>
+<!-- AI Insights -->
+<div class="ai-insight">
+<h3>AI Analysis</h3>
+<p>Client shows 15% improved endurance but 20% slower recovery compared to last month.</p>
+<div class="recommendation">
+<strong>Recommendation:</strong> Consider reducing high-intensity sessions by 30% 
+                and adding 2 active recovery days per week.
+            </div>
+</div>
+<!-- Plan Adjustment -->
+<form class="plan-form">
+<button class="update-button" onclick="window.location.href='App_Screen4_5_Health Data.html'" style="cursor: pointer;" type="submit">Update Exercise Plan</button>
+<div class="status-message success">
+                Plan updated and client notified successfully!
+            </div>
+</form>
+</div>
+<!-- Bottom Navigation -->
+<nav class="bottom-nav">
+<div class="nav-item" onclick="window.location.href='APP_Screen2_User Dashboard(Home Page).html'">🏠</div>
+<div class="nav-item" onclick="window.location.href='App_Screen3_1_Appointment.html'">📅</div>
+<div class="nav-item" onclick="window.location.href='App_Screen4_1_Health Data.html'">
+<div class="health-data-icon"></div>
+</div>
+<div class="nav-item" onclick="window.location.href='App_Screen5_Insights.html'">📊</div>
+<div class="nav-item" onclick="window.location.href='App_Screen6_My Profiles.html'">👤</div>
+</nav>
+<script>
+        const API_BASE_URL = 'http://127.0.0.1:5000/api';
+        let profiles = [];
+        let currentProfileId = null;
+
+        // 页面加载时获取配置文件列表
+        document.addEventListener('DOMContentLoaded', async () => {
+            await loadProfiles();
+        });
+
+        // 加载配置文件列表
+        async function loadProfiles() {
+            try {
+                const response = await fetch(`${API_BASE_URL}/profiles`, {
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to load profiles');
+                }
+
+                profiles = await response.json();
+                displayProfiles();
+            } catch (error) {
+                console.error('Error loading profiles:', error);
+                showAlert('Failed to load profiles', 'error');
+            }
+        }
+
+        // 显示配置文件列表
+        function displayProfiles() {
+            const profileList = document.querySelector('.profile-list');
+            profileList.innerHTML = '';
+
+            profiles.forEach(profile => {
+                const profileCard = createProfileCard(profile);
+                profileList.appendChild(profileCard);
+            });
+        }
+
+        // 创建配置文件卡片
+        function createProfileCard(profile) {
+            const card = document.createElement('div');
+            card.className = 'profile-card';
+            if (profile.id === currentProfileId) {
+                card.classList.add('active');
+            }
+
+            card.innerHTML = `
+                <div class="profile-avatar">
+                    <img src="${profile.avatar || 'default-avatar.png'}" alt="${profile.name}">
+                </div>
+                <div class="profile-info">
+                    <h3>${profile.name}</h3>
+                    <p>${profile.role || 'User'}</p>
+                </div>
+                <button class="switch-btn" onclick="switchProfile('${profile.id}')">
+                    Switch
+                </button>
+            `;
+
+            return card;
+        }
+
+        // 切换配置文件
+        async function switchProfile(profileId) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/profiles/${profileId}/switch`, {
+                    method: 'POST',
+                    credentials: 'include'
+                });
+
+                if (!response.ok) {
+                    throw new Error('Failed to switch profile');
+                }
+
+                currentProfileId = profileId;
+                showAlert('Profile switched successfully', 'success');
+                
+                // 更新UI显示
+                const cards = document.querySelectorAll('.profile-card');
+                cards.forEach(card => {
+                    if (card.querySelector('.switch-btn').getAttribute('onclick').includes(profileId)) {
+                        card.classList.add('active');
+                    } else {
+                        card.classList.remove('active');
+                    }
+                });
+
+                // 延迟后跳转到主页
+                setTimeout(() => {
+                    window.location.href = 'App_Screen1_Home.html';
+                }, 1500);
+            } catch (error) {
+                console.error('Error switching profile:', error);
+                showAlert('Failed to switch profile', 'error');
+            }
+        }
+
+        // 显示提示信息
+        function showAlert(message, type = 'info') {
+            // 创建提示元素
+            const alertDiv = document.createElement('div');
+            alertDiv.className = `alert ${type}`;
+            alertDiv.textContent = message;
+            
+            // 添加到页面
+            document.body.appendChild(alertDiv);
+            
+            // 3秒后移除
+            setTimeout(() => {
+                alertDiv.remove();
+            }, 3000);
+        }
+
+        // 添加提示样式
+        const style = document.createElement('style');
+        style.textContent = `
+            .alert {
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                border-radius: 5px;
+                color: white;
+                z-index: 1000;
+                animation: fadeIn 0.3s, fadeOut 0.3s 2.7s;
+            }
+            
+            .alert.success {
+                background-color: #10b981;
+            }
+            
+            .alert.error {
+                background-color: #ef4444;
+            }
+            
+            .alert.info {
+                background-color: #3b82f6;
+            }
+            
+            @keyframes fadeIn {
+                from { opacity: 0; transform: translateY(-20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+            
+            @keyframes fadeOut {
+                from { opacity: 1; transform: translateY(0); }
+                to { opacity: 0; transform: translateY(-20px); }
+            }
+
+            .profile-card {
+                display: flex;
+                align-items: center;
+                padding: 15px;
+                margin-bottom: 10px;
+                background: white;
+                border-radius: 10px;
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+                transition: all 0.3s ease;
+            }
+
+            .profile-card.active {
+                border: 2px solid #3b82f6;
+            }
+
+            .profile-avatar {
+                width: 50px;
+                height: 50px;
+                margin-right: 15px;
+            }
+
+            .profile-avatar img {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                object-fit: cover;
+            }
+
+            .profile-info {
+                flex: 1;
+            }
+
+            .profile-info h3 {
+                margin: 0;
+                font-size: 16px;
+                color: #1f2937;
+            }
+
+            .profile-info p {
+                margin: 5px 0 0;
+                font-size: 14px;
+                color: #6b7280;
+            }
+
+            .switch-btn {
+                padding: 8px 16px;
+                background: #3b82f6;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background 0.3s ease;
+            }
+
+            .switch-btn:hover {
+                background: #2563eb;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
