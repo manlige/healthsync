@@ -609,7 +609,7 @@
     </form>
 </div>
 <script>
-const API_BASE_URL = 'http://127.0.0.1:5000/api';
+const API_BASE_URL = ''; // 移除 API 地址，因为我们使用 localStorage
 
 // 显示错误或成功消息
 function showAlert(message, type = 'error') {
@@ -670,30 +670,28 @@ async function handleSignup(event) {
     toggleLoading(true);
     
     try {
-        const response = await fetch(`${API_BASE_URL}/auth/register`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            credentials: 'include',
-            body: JSON.stringify({
-                name: name,
-                email: email,
-                password: password,
-                role: 'patient'
-            })
-        });
-
-        const data = await response.json();
-
-        if (!response.ok) {
-            throw new Error(data.error || 'Registration failed');
+        // 获取已存在的用户列表
+        const users = JSON.parse(localStorage.getItem('users') || '[]');
+        
+        // 检查邮箱是否已被注册
+        if (users.some(user => user.email === email)) {
+            throw new Error('Email already registered');
         }
 
-        showAlert('Registration successful! Redirecting to login...', 'success');
+        // 创建新用户
+        const newUser = {
+            id: Date.now(), // 使用时间戳作为简单的ID
+            name: name,
+            email: email,
+            password: password,
+            role: 'patient'
+        };
 
-        // 保存用户信息
-        localStorage.setItem('user', JSON.stringify(data.user));
+        // 添加新用户到列表
+        users.push(newUser);
+        localStorage.setItem('users', JSON.stringify(users));
+
+        showAlert('Registration successful! Redirecting to login...', 'success');
         
         setTimeout(() => {
             window.location.href = 'APP_Screen1_Welcome&Login.html';
